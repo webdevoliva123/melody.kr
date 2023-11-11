@@ -1,0 +1,44 @@
+[
+    {
+        "id": 1,
+        "thumbnail" : "https://res.cloudinary.com/dkz1pnb2b/image/upload/v1698170211/2d4085c7-812f-4591-82d2-1fab8fb27382_6ce871b7_kj5iau.jpg",
+        "title" : "Bae Doona offered lead in sci-fi thriller K-drama Family Planning, Ahn Bo-hyun eyed for historical drama Hash’s Shinru – Korean drama casting latest",
+        "publisher" : "Oliva",
+        "publish_At" : "Today"
+    },
+    {
+        "id": 2,
+        "thumbnail" : "https://res.cloudinary.com/dkz1pnb2b/image/upload/v1698002048/p1065579110984362_181_thum_rdz41l.jpg",
+        "title" : "K-drama A Good Day to Be a Dog: Park Gyu-young, Cha Eun-woo lead fantasy romcom with a fluffy twist",
+        "publisher" : "Yo Seok",
+        "publish_At" : "SEPTEMBER 23, 2023"
+     },
+    {
+        "id": 3,
+        "thumbnail" : "https://res.cloudinary.com/dkz1pnb2b/image/upload/v1698170980/d08c7905-4f22-44b1-84ec-b5e99631a3c3_c036f9ee_jn53tu.jpg",
+        "title" : "Netflix K-drama Strong Girl Nam-soon: Squid Game star Lee Yoo-mi leads childish follow-up to modern classic Strong Girl Bong-soon",
+        "publisher" : "Oliva",
+        "publish_At" : "SEPTEMBER 23, 2023"
+    },
+    {
+        "id": 4,
+        "thumbnail" : "https://res.cloudinary.com/dkz1pnb2b/image/upload/v1698171059/2cd47af5-fa98-49bd-9fd0-3a2ca9c37bab_8fb933f8_yd9ske.jpg",
+        "title" : "Moving’s breakout star Han Hyo-joo’s quiet luxury style: from bare make-up to classic ‘fits for Louis Vuitton and Tiffany & Co., the K-drama actress and model is known for her minimalist fashion",
+        "publisher" : "Teayo",
+        "publish_At" : "AUGUST 19, 2023"
+    },
+    {
+        "id": 5,
+        "thumbnail" : "https://res.cloudinary.com/dkz1pnb2b/image/upload/v1698171121/01676a82-6aef-4b66-bd4b-bb4ed5797f14_f546ff1c_xnfd7d.jpg",
+        "title" : "ProfileWho is Ji Chang-wook, popular Korean actor and star of K-dramas The Worst of Evil on Disney+ and The Sound of Magic on Netflix?",
+        "publisher" : "Yo Seok",
+        "publish_At" : "AUGUST 1, 2023"
+    },
+    {
+        "id": 6,
+        "thumbnail" : "https://res.cloudinary.com/dkz1pnb2b/image/upload/v1698171199/e4ff21d0-adb0-45bb-b1e8-99d8d196fd59_bbc355cf_hh4fmp.jpg",
+        "title" : "Busan 2023: K-drama LTNS – Esom, Ahn Jae-hong shine as a sexless couple in stand-out black comedy that’s music to the ears",
+        "publisher" : "Teayo",
+        "publish_At" : "JULY 29, 2023"
+    }
+]

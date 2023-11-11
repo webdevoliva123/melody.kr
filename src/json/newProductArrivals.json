@@ -1,0 +1,119 @@
+[
+    {
+        "thumbnail": "https://res.cloudinary.com/dkz1pnb2b/image/upload/v1699635532/01ab94a817dcf9585ca2a06842b3b3257633ea365db1ba53e90ba75f0953_pkgfxw.png",
+        "name" : "Galaxy Z Fold 5 Case Oh My Genuine Luxury Chino Cowhide Card Wallet Case",
+        "price" : {
+            "discount" : true,
+            "percent" : 46,
+            "originalAmt" : 117000,
+            "discountAmt" : 63000,
+            "currentType": "won",
+            "symbol" : "￦"
+        },
+        "rating": 4
+    },
+    {
+        "thumbnail": "https://res.cloudinary.com/dkz1pnb2b/image/upload/v1699635111/15617f2830c353c25c2d0491beeef1fe8399796dcf4f82215a3af8e64ac0_cusr7k.jpg",
+        "name" : "Peanuts Genuine Unisex Overfit Character Round Sweatshirt Big Size Daily Tee Loose Fit Couple Round T-shirt Men Women Long Tee Group Tee Snoopy Snoopy",
+        "price" : {
+            "discount" : true,
+            "percent" : 60,
+            "originalAmt" : 74500,
+            "discountAmt" : 29800,
+            "currentType": "won",
+            "symbol" : "￦"
+        },
+        "rating": 4
+    },
+    
+    {
+        "thumbnail": "https://res.cloudinary.com/dkz1pnb2b/image/upload/v1699635384/128234c702d4bbbdb4f996d08b03c7a5c88b6471f8a1590fec4f97682bf7_wkl2fv.jpg",
+        "name" : "Billions unisex sweatshirt thin long sleeve basic special cotton 1+1 big size",
+        "price" : {
+            "discount" : true,
+            "percent" : 23,
+            "originalAmt" : 29800,
+            "discountAmt" : 22800,
+            "currentType": "won",
+            "symbol" : "￦"
+        },
+        "rating": 4
+    },
+    {
+        "thumbnail": "https://res.cloudinary.com/dkz1pnb2b/image/upload/v1699638691/7d67de279d82f6f65c012d88f3dbb1671eb9bf40b65a6aaf3b40e2ac9b56_dsoly7.jpg",
+        "name" : "[Self-made] Board Bear Printing Sweatshirt",
+        "price" : {
+            "discount" : false,
+            "percent" : 0,
+            "originalAmt" : 13900,
+            "discountAmt" : 0,
+            "currentType": "won",
+            "symbol" : "￦"
+        },
+        "rating": 4
+    },
+    {
+        "thumbnail": "https://res.cloudinary.com/dkz1pnb2b/image/upload/v1699638954/511207263191672-afaf7968-ec4e-40dc-91bc-c530ca5615e9_d9r5z9.jpg",
+        "name" : "Xiaomi Redmi Pad SE Tablet PC 4GB",
+        "price" : {
+            "discount" : true,
+            "percent" : 4,
+            "originalAmt" : 218000,
+            "discountAmt" : 208000,
+            "currentType": "won",
+            "symbol" : "￦"
+        },
+        "rating": 4
+    },
+    {
+        "thumbnail": "https://res.cloudinary.com/dkz1pnb2b/image/upload/v1699639099/2933515269704792-11bb050c-9455-48d3-9e96-ff61f377ac7e_j6yhjw.jpg",
+        "name" : "Vitagram professional hair clipper set SC-HC200",
+        "price" : {
+            "discount" : true,
+            "percent" : 64,
+            "originalAmt" : 59900,
+            "discountAmt" : 24620,
+            "currentType": "won",
+            "symbol" : "￦"
+        },
+        "rating": 4
+    },
+    {
+        "thumbnail": "https://res.cloudinary.com/dkz1pnb2b/image/upload/v1699640146/d74f45ef-1f92-4998-b8c8-6eb488963cf8_j49tuz.jpg",
+        "name" : "Juyeon Tech Carryview UHD Portable Touch Monitor 39.6cm",
+        "price" : {
+            "discount" : true,
+            "percent" : 22,
+            "originalAmt" : 399000,
+            "discountAmt" : 349630,
+            "currentType": "won",
+            "symbol" : "￦"
+        },
+        "rating": 4
+    },
+    {
+        "thumbnail": "https://res.cloudinary.com/dkz1pnb2b/image/upload/v1699640306/b4bded38222cdb8350d47410bfc5e63bec4656d912665c656b0c269701d4_ty0blp.jpg",
+        "name" : "Chephie Overfit Big Moon Lettering Women's Fall Hoodie Unisex",
+        "price" : {
+            "discount" : true,
+            "percent" : 14,
+            "originalAmt" : 26800,
+            "discountAmt" : 22980,
+            "currentType": "won",
+            "symbol" : "￦"
+        },
+        "rating": 4
+    },{
+        "thumbnail": "https://res.cloudinary.com/dkz1pnb2b/image/upload/v1699640657/c933c8f328fffb992a64b432cf8143118407153367cebb2e312f9fe87933_vobkym.jpg",
+        "name" : "IM Men's Box Overfit Fleece Fleece Awesome Embroidery Hooded Sweatshirt [2 Colors]",
+        "price" : {
+            "discount" : true,
+            "percent" : 22,
+            "originalAmt" : 58000,
+            "discountAmt" : 45000,
+            "currentType": "won",
+            "symbol" : "￦"
+        },
+        "rating": 4
+    }
+]

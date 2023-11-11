@@ -1,0 +1,44 @@
+[
+    {
+        "title" : "Talk Saxy",
+        "thumbnail" : "https://res.cloudinary.com/dkz1pnb2b/image/upload/v1698524370/68a8656a7b508523959501558df02c4a.1000x1000x1_kmaxib.jpg",
+        "artist" :"Riize",
+        "release" : "1 Day Ago",
+        "duration" : "3:10 min"
+    },
+    {
+        "title" : "Perfect Night",
+        "thumbnail" : "https://res.cloudinary.com/dkz1pnb2b/image/upload/v1698524559/LE-SSERAFIM-Perfect-Night_x4phaz.jpg",
+        "artist" :"Le Sserafim",
+        "release" : "1 Day Ago",
+        "duration" : "2:39 min"
+    },
+    {
+        "title" : "Loved",
+        "thumbnail" : "https://res.cloudinary.com/dkz1pnb2b/image/upload/v1698524667/B.I-LOVED_xglpbd.jpg",
+        "artist" :"B.I",
+        "release" : "1 Day Ago",
+        "duration" : "2:36 min"
+    },
+    {
+        "title" : "What Should I do ",
+        "thumbnail" : "https://res.cloudinary.com/dkz1pnb2b/image/upload/v1698524764/109fd6ec966bc21df83094fbd84b7af8.1000x1000x1_xqklbs.jpg",
+        "artist" :"Giriboy",
+        "release" : "1 Day Ago",
+        "duration" : "3:42 min"
+    },
+    {
+        "title" : "Because I don't Know How To Love (2023)",
+        "thumbnail" : "https://res.cloudinary.com/dkz1pnb2b/image/upload/v1698524893/1303d35adb9adb14025538106894a5c0.600x600x1_myo0pv.jpg",
+        "artist" :"Fitisland",
+        "release" : "1 Day Ago",
+        "duration" : "5:36 min"
+    },
+    {
+        "title" : "awry (prod. Epitone Project)",
+        "thumbnail" : "https://res.cloudinary.com/dkz1pnb2b/image/upload/v1698525076/Kate-R_1_evmada.webp",
+        "artist" :"Heo Hoy Kyung",
+        "release" : "1 Day Ago",
+        "duration" : "3:09 min"
+    }
+]

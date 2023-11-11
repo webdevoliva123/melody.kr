@@ -1,0 +1,36 @@
+.card_container:hover .card_image,
+.shopping_card_container:hover .shopping_card_image{
+    transform: scale(1.1);
+    transition:  250ms linear;
+}
+
+.card_container:hover .card_content{
+    padding: 25px;
+    transition:  250ms linear;
+}
+
+.card_container:hover .card_content_small{
+    padding: 20px;
+    transition:  250ms linear;
+}
+
+.card_layer{
+    display: none;
+}
+
+.card_container:hover .card_layer{
+    display: block;
+}
+
+.shopping_card_container:hover .shopping_card_content{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition:  250ms linear;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0 !important;
+}

@@ -1,0 +1,37 @@
+[
+    {
+        "thumbnail": "https://res.cloudinary.com/dkz1pnb2b/image/upload/v1699623325/in-feature-galaxy-z-flip4-f721-533533280_msdhjy.jpg",
+        "name" : "Electronics",
+        "url" : "/"
+    },
+    {
+        "thumbnail": "https://res.cloudinary.com/dkz1pnb2b/image/upload/v1699624717/XXL_p0201825132_gpkrhv.jpg",
+        "name" : "Clothing",
+        "url" : "/"
+    },
+    {
+        "thumbnail":"https://res.cloudinary.com/dkz1pnb2b/image/upload/v1699630155/XXL_p0195968309_dktwej.jpg",
+        "name" : "Footwear",
+        "url" : "/"
+    },
+    {
+        "thumbnail":"https://res.cloudinary.com/dkz1pnb2b/image/upload/v1699623433/XXL_p0193415217_n4gpdz.jpg",
+        "name" : "Accessories",
+        "url" : "/"
+    },
+    {
+        "thumbnail":"https://res.cloudinary.com/dkz1pnb2b/image/upload/v1699624830/image_bmizju.webp",
+        "name" : "Beauty",
+        "url" : "/"
+    },
+    {
+        "thumbnail":"https://res.cloudinary.com/dkz1pnb2b/image/upload/v1699625428/Korean-spices-oil-vinegar_nclfyz.jpg",
+        "name" : "Grocery",
+        "url" : "/"
+    },
+    {
+        "thumbnail":"https://res.cloudinary.com/dkz1pnb2b/image/upload/v1699625519/A-Clay-thumbnail-food-1440x720_kh2wee.jpg",
+        "name" : "Vegetables",
+        "url" : "/"
+    }
+]

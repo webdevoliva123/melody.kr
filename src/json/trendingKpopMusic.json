@@ -1,0 +1,57 @@
+[
+    {
+        "thumbnail" : "https://res.cloudinary.com/dkz1pnb2b/image/upload/v1698509860/jk-3d-concept-photo-1d-1_gembbd.jpg",
+        "name":"3D (feat. Jack Harlow)",
+        "artist" : {
+            "name" : "Jung Kook",
+            "profile" : "https://res.cloudinary.com/dkz1pnb2b/image/upload/v1698502733/2-BTS-Jungkook-Seven-feat-Latto-Lyrics-Meaning-English-Translation_oyylvw.jpg"
+        },
+        "feature" : ["Jack Harlow"],
+        "duration" : "3:21 min",
+        "listners" : "165,228,542"
+    },
+    {
+        "thumbnail" : "https://res.cloudinary.com/dkz1pnb2b/image/upload/v1698509933/JUNGKOOK-SEVEN-TEASER_etdzaj.jpg",
+        "name":"Seven (feat. Latto)",
+        "artist" : {
+            "name" : "Jung Kook",
+            "profile" : "https://res.cloudinary.com/dkz1pnb2b/image/upload/v1698502733/2-BTS-Jungkook-Seven-feat-Latto-Lyrics-Meaning-English-Translation_oyylvw.jpg"
+        },
+        "feature" : ["Latto"],
+        "duration" : "3:04 min",
+        "listners" : "982,045,625"
+    },
+    {
+        "thumbnail" : "https://res.cloudinary.com/dkz1pnb2b/image/upload/v1698502865/maxresdefault_kpms6g.jpg",
+        "name":"Cupid (Twin Ver.)",
+        "artist" : {
+            "name" : "FIFTY FIFTY",
+            "profile" : "https://res.cloudinary.com/dkz1pnb2b/image/upload/v1698502926/ab6761610000e5eb1193a00caa638c135ffc60ec_mdyezl.jpg"
+        },
+        "feature" : [],
+        "duration" : "1:30 min",
+        "listners" : "670,189,570"
+    },
+    {
+        "thumbnail" : "https://res.cloudinary.com/dkz1pnb2b/image/upload/v1698510109/JENNIE-_E2_80_98You-Me-Jazz-ver.-LIVE-CLIP-screenshot-billboard-1548_xma5sn.jpg",
+        "name":"You & Me (Coachella ver.)",
+        "artist" : {
+            "name" : "Jennie",
+            "profile" : "https://res.cloudinary.com/dkz1pnb2b/image/upload/v1698503148/ab6761610000e5ebd95cf4457fac4cc62311f84f_fyt7ju.jpg"
+        },
+        "feature" : [],
+        "duration" : "1:30 min",
+        "listners" : "20,473,094"
+    },
+    {
+        "thumbnail" : "https://res.cloudinary.com/dkz1pnb2b/image/upload/v1698510191/maxresdefault_mzhlfo.jpg",
+        "name":"Right Now (feat. Crush)",
+        "artist" : {
+            "name" : "Coogie",
+            "profile" : "https://res.cloudinary.com/dkz1pnb2b/image/upload/v1698503448/latest_ecjc1p.png"
+        },
+        "feature" : ["Crush"],
+        "duration" : "1:30 min",
+        "listners" : "982,045,625"
+    }
+]

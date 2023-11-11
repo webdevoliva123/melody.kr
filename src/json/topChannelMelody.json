@@ -1,0 +1,38 @@
+[
+    {
+        "thumbnail": "https://res.cloudinary.com/dkz1pnb2b/image/upload/v1698604200/BTS_JOIN_LOUIS_VUITTON_AS_HOUSE_AMBASSADORS-a525d86a4d4745dd8ff413cc723c6c7e_t14a5c.jpg",
+        "name" : "BTS",
+        "verified" : true,
+        "member" : "42,637,567"
+    },
+    {
+        "thumbnail": "https://res.cloudinary.com/dkz1pnb2b/image/upload/v1698605361/1687966014-untitled-1_tibo5n.jpg",
+        "name" : "TXT",
+        "verified" : true,
+        "member" : "40,679,928"
+    },
+    {
+        "thumbnail": "https://res.cloudinary.com/dkz1pnb2b/image/upload/v1698604325/cropped-blackpink-pink-venom-10802_j9f5hp.webp",
+        "name" : "Blackpink",
+        "verified" : true,
+        "member" : "33,732,662"
+    },
+    {
+        "thumbnail": "https://res.cloudinary.com/dkz1pnb2b/image/upload/v1698604466/20191219-BTS-04_u11tc7.jpg",
+        "name" : "7 Universe",
+        "verified" : false,
+        "member" : "10,679,928"
+    },
+    {
+        "thumbnail": "https://res.cloudinary.com/dkz1pnb2b/image/upload/v1698604779/image_qx3zbh.png",
+        "name" : "20sB2",
+        "verified" : false,
+        "member" : "9,669,268"
+    },
+    {
+        "thumbnail": "https://res.cloudinary.com/dkz1pnb2b/image/upload/v1698604796/latest_tg99wc.png",
+        "name" : "Woo!ah!",
+        "verified" : true,
+        "member" : "5,354,512"
+    }
+]

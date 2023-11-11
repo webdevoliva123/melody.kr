@@ -1,0 +1,57 @@
+[
+    {
+        "thumbnail" : "https://res.cloudinary.com/dkz1pnb2b/image/upload/v1698585723/AAAABURMZ7Fs4QPdKAyCWSqJKWwF8Bn2ev71yZ0ihfR19yE-6zvGE8hMxy8l4zUSUIba7rOeDYeLtNsUr02LcSYTp_A3v2r_hUp75G5a_j2zqvq.jpg",
+        "name" : "Strong Girl Namsoon (2023)",
+        "trailer" : "https://www.youtube.com/embed/bPnfXlsedvc?si=Yql05FBFr1fyIkfb",
+        "season" : 2,
+        "total_episode" : 16,
+        "next_episode" : {
+            "ep_name" : 8,
+            "relase_date" : "Oct 29, 2023"
+        }
+    },
+    {
+        "thumbnail" : "https://res.cloudinary.com/dkz1pnb2b/image/upload/v1698569516/fb831a344d_iwg97p.jpg",
+        "name" : "Twinkling Watermelon",
+        "trailer" : "https://www.youtube.com/embed/0bVxsYci_ck?si=773EM8a5CtHBJheI",
+        "season" : 1,
+        "total_episode" : 16,
+        "next_episode" : {
+            "ep_name" : 11,
+            "relase_date" : "Oct 24, 2023"
+        }
+    },
+    {
+        "thumbnail" : "https://res.cloudinary.com/dkz1pnb2b/image/upload/v1698585943/allkpop_1694477622_good-day-to-be-a-dog-002_qo7jmg.jpg",
+        "name" : "A Good Day to Be a Dog (2023)",
+        "trailer" : "https://www.youtube.com/embed/5gUvxeux9Bc?si=sm39YKhjnn9DN7LF",
+        "season" : 1,
+        "total_episode" : 14,
+        "next_episode" : {
+            "ep_name" : 4,
+            "relase_date" : "Nov 01, 2023"
+        }
+    },
+    {
+        "thumbnail" : "https://res.cloudinary.com/dkz1pnb2b/image/upload/v1698586376/0166f818f484477dac0ad15fb9f14875b05f72648c814452767c3135d48f5f47_y2ohpw.jpg",
+        "name" : "The Escape of the Seven: War for Survival (2023)",
+        "trailer" : "https://www.youtube.com/embed/uvf3AxtYQrw?si=h9XUiqqLV_m0efZq",
+        "season" : 1,
+        "total_episode" : 17,
+        "next_episode" : {
+            "ep_name" : 12,
+            "relase_date" : "Oct 28, 2023"
+        }
+    },
+    {
+        "thumbnail" : "https://res.cloudinary.com/dkz1pnb2b/image/upload/v1698593076/my-dearest-k-drama-696x442_oizufs.jpg",
+        "name" : "My Dearest Part 2 (2023)",
+        "trailer" : "https://www.youtube.com/embed/3TOrUQWR8NI?si=E8WN17DEek1rXEo2",
+        "season" : 2,
+        "total_episode" : 10,
+        "next_episode" : {
+            "ep_name" : 7,
+            "relase_date" : "Nov 03, 2023"
+        }
+    }
+]
