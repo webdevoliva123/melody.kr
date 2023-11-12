@@ -1,4 +1,4 @@
-import Button from "@/elements/button";
+import Button from "@/elements/Button";
 import React from "react";
 import kUpdates from "@/json/kDramaUpdatesNews.json";
 import Image from "next/image";

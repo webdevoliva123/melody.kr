@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import { BsFillGridFill } from "react-icons/bs";
 import { BiChevronDown } from "react-icons/bi";
-import DefaultWidgets from "./widgets/defaultWidgets";
+import DefaultWidgets from "./widgets/DefaultWidgets";
 import NewsWidgets from "./widgets/NewsWidgets";
 
 const Header = () => {

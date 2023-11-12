@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import recentBlog from "../../../../json/HighlightRecentBlog.json";
+import recentBlog from "../../../../json/highlightRecentBlog.json";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 
