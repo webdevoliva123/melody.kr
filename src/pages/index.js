@@ -55,7 +55,7 @@ export default function Home() {
             <TopChannelMelody />
           </div>
           {/* Join Us */}
-          <div className="my-6">
+          <div>
             <JoinUs />
           </div>
         </div>
