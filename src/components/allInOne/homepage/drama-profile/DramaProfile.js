@@ -1,12 +1,11 @@
 import Heading from "@/elements/Heading";
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import React, { useCallback, useRef, useState } from "react";
 import { BiChevronRight, BiChevronLeft, BiSolidTv } from "react-icons/bi";
 import { BsDot, BsFillPlayFill } from "react-icons/bs";
 import { AiOutlineClose } from "react-icons/ai";
 import kProfile from "@/json/kProfile.json";
 import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, { Navigation } from "swiper";
-SwiperCore.use([Navigation]);
+
 import "swiper/css";
 import Image from "next/image";
 
