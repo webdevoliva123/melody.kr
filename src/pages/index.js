@@ -2,24 +2,23 @@ import MelodyCategores from "@/components/allInOne/homepage/categores/MelodyCate
 import DramaProfile from "@/components/allInOne/homepage/drama-profile/DramaProfile";
 import GlobalMusic from "@/components/allInOne/homepage/global-music/GlobalMusic";
 import HighlightMostView from "@/components/allInOne/homepage/highlight-most-view/HighlightMostView";
-import HighlightRecentBlog from "@/components/allInOne/homepage/highlight-recent-blog/HighlightRecentBlog";
+import HighlightTrendingNews from "@/components/allInOne/homepage/highlight-trending-news/HighlightTrendingNews";
 import JoinUs from "@/components/allInOne/homepage/join-us/JoinUs";
 import KDramaUpdates from "@/components/allInOne/homepage/k-drama-updates/KDramaUpdates";
 import ShoppingAtMelody from "@/components/allInOne/homepage/shopping-at-melody/ShoppingAtMelody";
 import TopChannelMelody from "@/components/allInOne/homepage/top-channel-melody/TopChannelMelody";
 import Trendingkdrama from "@/components/allInOne/homepage/trending-kdrama/Trendingkdrama";
 
-
 export default function Home() {
   return (
     <div className="w-full">
       {/* most view blogs */}
-      <div className="lg:mb-10 mb-5">
+      <div className="lg:mb-6 mb-5">
         <HighlightMostView />
       </div>
       {/* Recent blogs */}
-      <div className="lg:mb-10 mb-5">
-        <HighlightRecentBlog />
+      <div className="lg:mb-6 mb-5">
+        <HighlightTrendingNews />
       </div>
       {/* double section */}
       <div className="grid lg:grid-cols-[69.8%,28.3%] grid-cols-1 gap-5 ">

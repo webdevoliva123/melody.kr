@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import recentBlog from "../../../../json/highlightRecentBlog.json";
+import trendingNews from "@/json/highlightTrendingNews.json";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -69,7 +69,7 @@ export const HightlightMainCard = ({ blog, slideIndex }) => {
   );
 };
 
-const HighlightRecentBlog = () => {
+const HighlightTrendingNews = () => {
   const [slideIndex, setSlideIndex] = useState(null);
   return (
     <>
@@ -77,7 +77,7 @@ const HighlightRecentBlog = () => {
       <div className="w-full h-[75vh] grid-cols-[28.3%,40%,28.3%] gap-5 lg:grid hidden z-[0]">
         {/* left section */}
         <div className="w-full h-full grid grid-rows-2 gap-5">
-          {recentBlog?.map((blog, idx) => {
+          {trendingNews?.map((blog, idx) => {
             if (blog?.id > 2 && blog?.id <= 4) {
               return (
                 <div
@@ -136,7 +136,7 @@ const HighlightRecentBlog = () => {
             className="mySwiper"
             onSlideChange={(slider) => setSlideIndex(slider.realIndex)}
           >
-            {recentBlog?.map((blog, idx) => {
+            {trendingNews?.map((blog, idx) => {
               if (blog?.id > 0 && blog?.id <= 2) {
                 return (
                   <SwiperSlide
@@ -152,7 +152,7 @@ const HighlightRecentBlog = () => {
         </div>
         {/* right section */}
         <div className="w-full h-full grid grid-rows-2 gap-5">
-          {recentBlog?.map((blog, idx) => {
+          {trendingNews?.map((blog, idx) => {
             if (blog?.id > 4 && blog?.id <= 6) {
               return (
                 <div
@@ -213,7 +213,7 @@ const HighlightRecentBlog = () => {
             className="mySwiper"
             onSlideChange={(slider) => setSlideIndex(slider.realIndex)}
           >
-            {recentBlog?.map((blog, idx) => {
+            {trendingNews?.map((blog, idx) => {
               if (blog?.id > 0 && blog?.id <= 2) {
                 return (
                   <SwiperSlide
@@ -228,7 +228,7 @@ const HighlightRecentBlog = () => {
           </Swiper>
         </div>
         <div className="lg:hidden w-full grid md:grid-cols-2  grid-cols-1 gap-5 z-[0]">
-          {recentBlog?.map((blog, idx) => {
+          {trendingNews?.map((blog, idx) => {
             if (blog?.id > 2) {
               return (
                 <div
@@ -276,4 +276,4 @@ const HighlightRecentBlog = () => {
   );
 };
 
-export default HighlightRecentBlog;
+export default HighlightTrendingNews;
