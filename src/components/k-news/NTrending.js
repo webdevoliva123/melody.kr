@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import trendingNews from "@/json/highlightTrendingNews.json";
 import Image from "next/image";
 import Heading from "@/elements/Heading";
@@ -10,7 +10,7 @@ const NTrending = () => {
   const [slideIndex, setSlideIndex] = useState(1);
   const [otherNewsData, setOtherNewsData] = useState([]);
 
-  const swiperRef = useRef();
+ 
   const updateSlides = () => {
     let filterArray = trendingNews.filter((_, idx) => idx > slideIndex);
     let prevArray = trendingNews.filter((_, idx) => idx < slideIndex);

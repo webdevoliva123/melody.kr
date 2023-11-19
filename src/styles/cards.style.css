@@ -1,5 +1,6 @@
 .card_container:hover .card_image,
-.shopping_card_container:hover .shopping_card_image{
+.shopping_card_container:hover .shopping_card_image,
+.watchout_card_container:hover .watchout_card_image{
     transform: scale(1.1);
     transition:  250ms linear;
 }
@@ -14,11 +15,13 @@
     transition:  250ms linear;
 }
 
-.card_layer{
+.card_layer,
+.watchout_card_layer{
     display: none;
 }
 
-.card_container:hover .card_layer{
+.card_container:hover .card_layer,
+.watchout_card_container:hover .watchout_card_layer{
     display: block;
 }
 
