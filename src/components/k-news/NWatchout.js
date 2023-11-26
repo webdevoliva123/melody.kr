@@ -7,7 +7,7 @@ const NWatchout = () => {
   return (
     <div className="w-full p-5 rounded-lg bg-secondary">
       <div className="mb-6">
-        <Heading label={"Watch Now"} custcss={"!text-2xl"} />
+        <Heading label={"Watchout Video's Now"}/>
       </div>
       <div className="w-full lg:h-[50vh] h-auto grid lg:grid-cols-3 md:gridcols-2 gap-5">
         {watchoutList?.map((video, idx) => {
@@ -16,16 +16,16 @@ const NWatchout = () => {
               key={idx}
               className="relative w-full  rounded-lg watchout_card_container cursor-pointer "
             >
-              <div className="relative w-full lg:h-[30vh] md:h-[40vh] rounded-lg overflow-hidden">
+              <div className="relative w-full lg:h-[25vh] md:h-[40vh] rounded-lg overflow-hidden">
                 <Image
                   src={video?.thumbnail}
                   alt={video?.title}
                   width={500}
                   height={500}
-                  className="relative w-full  object-cover watchout_card_image z-[0]"
+                  className="relative w-full  h-full object-cover watchout_card_image z-[0]"
                 />
                 {/* bglayer */}
-                <div className="watchout_card_layer absolute top-0 left-0 w-full h-full bg-black bg-opacity-[0.4] z-[2]">
+                <div className="watchout_card_layer absolute top-0 left-0 w-full lg:h-[25vh] md:h-[40vh] bg-black bg-opacity-[0.4] z-[2]">
                     <FaPlay size={30} className="text-white absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%]" />
                 </div>
               </div>

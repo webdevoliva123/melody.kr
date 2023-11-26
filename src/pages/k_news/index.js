@@ -1,3 +1,4 @@
+import NCategories from "@/components/k-news/NCategories";
 import NLatest from "@/components/k-news/NLatest";
 import NPicked from "@/components/k-news/NPicked";
 import NSpotlight from "@/components/k-news/NSpotlight";
@@ -14,20 +15,28 @@ const index = () => {
       <div className="mb-6">
         <NLatest />
       </div>
-      {/* <div className="mb-6">
-        <NWatchout />
-      </div> */}
+
       <div className="grid lg:grid-cols-[69.8%,28.3%] grid-cols-1 gap-5 mb-6">
         {/* left section */}
-        <div className="w-full h-auto lg:h-[2110px] overflow-y-auto no-scrollbar">
+        <div className="w-full h-auto lg:h-[115vh] overflow-y-auto no-scrollbar">
           {/* spotlight */}
-          <NSpotlight />
+          <div className="mb-6">
+            <NSpotlight />
+          </div>
+          {/* watch videos */}
+          <div className="mb-6">
+            <NWatchout />
+          </div>
         </div>
         {/* right section */}
         <div className="w-full h-auto">
           {/* Picked one */}
           <div className="mb-6">
             <NPicked />
+          </div>
+          {/* categories */}
+          <div className="mb-6">
+            <NCategories />
           </div>
         </div>
       </div>
