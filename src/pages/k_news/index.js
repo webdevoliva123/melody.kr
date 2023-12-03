@@ -1,3 +1,4 @@
+import AllInSmall from "@/components/k-news/AllInSmall";
 import NCategories from "@/components/k-news/NCategories";
 import NLatest from "@/components/k-news/NLatest";
 import NPicked from "@/components/k-news/NPicked";
@@ -18,7 +19,7 @@ const index = () => {
 
       <div className="grid lg:grid-cols-[69.8%,28.3%] grid-cols-1 gap-5 mb-6">
         {/* left section */}
-        <div className="w-full h-auto lg:h-[115vh] overflow-y-auto no-scrollbar">
+        <div className="w-full h-auto ">
           {/* spotlight */}
           <div className="mb-6">
             <NSpotlight />
@@ -27,6 +28,7 @@ const index = () => {
           <div className="mb-6">
             <NWatchout />
           </div>
+          
         </div>
         {/* right section */}
         <div className="w-full h-auto">
@@ -41,6 +43,8 @@ const index = () => {
         </div>
       </div>
       {/*  */}
+      {/* all in small content */}
+      <AllInSmall />
     </div>
   );
 };
