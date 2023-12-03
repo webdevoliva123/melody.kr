@@ -2,7 +2,7 @@ import Heading from "@/elements/Heading";
 import Image from "next/image";
 import React from "react";
 
-const NCategories = () => {
+const NCategories = ({title}) => {
   const categories = [
     {
       url: "/",
@@ -36,7 +36,7 @@ const NCategories = () => {
   return (
     <div className="relative p-5  rounded-lg">
       <div className="w-full flex justify-between items-center mb-2">
-        <Heading label={"Categories"} />
+        <Heading label={title ? title :"Categories"} htype={2}/>
       </div>
       <div className="grid grid-cols-1 gap-4">
         {categories?.map((cat, idx) => {

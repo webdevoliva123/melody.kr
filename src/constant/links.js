@@ -5,7 +5,7 @@ export const defaultLinks = [
     id: "kNews",
     name: "k-News",
     subCategory: false,
-    url : '/k_news'
+    url : '/news'
   },
   {
     id: "blogs",
@@ -44,42 +44,36 @@ export const k_NewsLinks = [
     id: "k_newsExplore",
     name: "Explore",
     subCategory: true,
-    url : '/'
-  },
-  {
-    id: "k_newsQuiz",
-    name: "Quiz",
-    subCategory: false,
-    url : '/'
+    url : '/news'
   },
   {
     id: "k_newsVideo",
     name: "Videos",
     subCategory: false,
-    url : '/'
+    url : '/news/categories/video'
   },
   {
     id: "k_newsStyle",
     name: "Style",
     subCategory: false,
-    url : '/'
+    url : '/news/categories/style'
   },
   {
     id: "k_newsTV/FILM",
     name: "TV/FILM",
     subCategory: false,
-    url : '/'
+    url : '/news/categories/film'
   },
   {
     id: "k_newsMusic",
     name: "Music",
     subCategory: false,
-    url : '/'
+    url : '/news/categories/music'
   },
   {
     id: "k_newsFeatures",
     name: "Features",
     subCategory: false,
-    url : '/'
+    url : '/news/categories/features'
   },
 ];

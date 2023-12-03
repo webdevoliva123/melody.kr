@@ -60,10 +60,10 @@ const Header = () => {
   }, []);
 
   useEffect(() => {
-    switch (router?.pathname) {
-      case "/":
+    switch (router?.pathname?.split('/')[1]) {
+      case "":
         return setCurrentStateLink(defaultLinks);
-      case "/k_news":
+      case "news":
         return setCurrentStateLink(k_NewsLinks);
       default:
         return setCurrentStateLink(defaultLinks);

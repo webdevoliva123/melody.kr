@@ -8,7 +8,7 @@ import shopingBg from "@/assets/images/homepage/categories/shoping.jpeg";
 import melodyFBg from "@/assets/images/homepage/categories/melodyF.jpeg";
 import Image from "next/image";
 
-const MelodyCategores = () => {
+const MelodyCategores = ({title}) => {
   const catList = [
     {
       name: "Blogs",
@@ -45,7 +45,7 @@ const MelodyCategores = () => {
     <div>
       {/* heading */}
       <div className="mb-5">
-        <Heading label={"Categories"} />
+        <Heading label={title ? title : "Categories"} htype={2}/>
       </div>
       {/* categories */}
       {catList?.map((cat, idx) => {
