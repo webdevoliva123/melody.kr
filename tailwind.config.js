@@ -18,7 +18,8 @@ module.exports = {
       },
       textColor:{
         'primary':"var(--text-primary)",
-        'secondary':"var(--text-secondary)"
+        'secondary':"var(--text-secondary)",
+        'loading':'var(--bg-secondary)'
       },
       colors:{
         'accent':'#3d55ef',

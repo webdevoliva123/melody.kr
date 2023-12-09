@@ -41,12 +41,6 @@ export const defaultLinks = [
 
 export const k_NewsLinks = [
   {
-    id: "k_newsExplore",
-    name: "Explore",
-    subCategory: true,
-    url : '/news'
-  },
-  {
     id: "k_newsVideo",
     name: "Videos",
     subCategory: false,
@@ -60,7 +54,7 @@ export const k_NewsLinks = [
   },
   {
     id: "k_newsTV/FILM",
-    name: "TV/FILM",
+    name: "Drama",
     subCategory: false,
     url : '/news/categories/film'
   },
