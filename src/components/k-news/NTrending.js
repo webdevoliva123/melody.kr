@@ -35,7 +35,7 @@ const NTrending = () => {
   return (
     <>
       {/* Trending News */}
-      <div className="w-full lg:h-[75vh] md:h-[150vh] h-[50vh] grid lg:grid-cols-[69.8%,28.3%] grid-cols-1 lg:gap-5  ">
+      <div className="w-full lg:h-[70vh] md:h-[150vh] h-[50vh] grid lg:grid-cols-[69.8%,28.3%] grid-cols-1 lg:gap-5  ">
         {/* left container */}
         <div className="relative bg-secondary w-full h-full rounded-lg overflow-hidden">
           <Swiper
@@ -49,18 +49,18 @@ const NTrending = () => {
           >
             {trendingNews?.map((news, idx) => {
               return (
-                <SwiperSlide key={idx} className="w-full h-full">
+                <SwiperSlide key={idx} className="w-full h-full card_container">
                   <Image
                     src={news?.thumbnail}
                     alt={news?.title}
                     width={500}
                     height={500}
-                    className="relative w-full h-full object-cover"
+                    className="relative w-full h-full object-cover card_image"
                   />
                   {/* layer */}
                   <div className="w-full h-full absolute top-0 left-0 bg-layer bg-opacity-[0.6] z-[1]"></div>
                   {/* info */}
-                  <div className="absolute bottom-0 left-0 w-full  p-5 flex justify-start items-end z-[2] mb-5">
+                  <div className="absolute bottom-0 left-0 w-full  p-5 flex justify-start items-end z-[2] mb-5 card_content">
                     {/* div */}
                     <div>
                       <article className="text-white md:text-sm text-xs cursor-pointer uppercase mb-2 opacity-[0.9]">

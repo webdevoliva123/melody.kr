@@ -13,6 +13,8 @@ import NCategories from "@/components/k-news/NCategories";
 import MelodyCategores from "@/components/allInOne/homepage/categores/MelodyCategores";
 import Heading from "@/elements/Heading";
 import CatLoading from "@/components/global/loadings/k-news/CatLoading";
+import Link from "next/link";
+import Head from "next/head";
 
 const Categories = () => {
   const router = useRouter();
@@ -25,26 +27,29 @@ const Categories = () => {
     setTimeout(() => {
       switch (router?.query?.cat) {
         case "video":
-            setDataList(news_video);
-            return setLoading(false);
+          setDataList(news_video);
+          return setLoading(false);
         case "style":
-            setDataList(news_style);
-            return setLoading(false);
+          setDataList(news_style);
+          return setLoading(false);
         case "film":
-            setDataList(news_film);
-            return setLoading(false);
+          setDataList(news_film);
+          return setLoading(false);
         case "music":
-            setDataList(news_music);
-            return setLoading(false);
+          setDataList(news_music);
+          return setLoading(false);
         case "features":
-            setDataList(news_features);
-            return setLoading(false);
+          setDataList(news_features);
+          return setLoading(false);
       }
     }, [2000]);
   }, [router]);
 
   return (
     <>
+    <Head>
+    <title >{router?.query?.cat} section | Melody.kr</title>
+    </Head>
       {loading ? (
         <CatLoading _name={router?.query?.cat} />
       ) : (
@@ -74,22 +79,22 @@ const Categories = () => {
                       htype={2}
                       custcss="!text-white !text-[14px] mb-2"
                     />
+
                     <article className="mb-2 text-[14px] text-white">
                       {" "}
                       Uploaded At {dataList[0]?.created_At}
                     </article>
-                    <article className="md:text-[30px] text-[20px] font-semibold text-white md:max-w-[90%] mb-2 hover:underline cursor-pointer">
-                      {dataList[0]?.title?.length > 100
-                        ? `${dataList[0]?.title?.slice(0, 100)}...`
-                        : dataList[0]?.title}
-                    </article>
+                    <Link href={`/news/article/${dataList[0]?.id}`}>
+                      <article className="md:text-[30px] text-[20px] font-semibold text-white md:max-w-[90%] mb-2 hover:underline cursor-pointer">
+                        {dataList[0]?.title?.length > 100
+                          ? `${dataList[0]?.title?.slice(0, 100)}...`
+                          : dataList[0]?.title}
+                      </article>
+                    </Link>
                     <article className="md:text-[14px] text-[12px] text-dark md:max-w-[75%] mb-2">
                       {dataList[0]?.summary?.length > 150
                         ? `${dataList[0]?.summary?.slice(0, 150)}...`
                         : dataList[0]?.summary}{" "}
-                      <span className="text-[12px] cursor-pointer underline text-[#ccc] ml-2">
-                        Read More
-                      </span>
                     </article>
                   </div>
                   {/* article publicer content */}
@@ -176,17 +181,14 @@ const Categories = () => {
                           custcss="!text-primary mb-2 !text-[14px]"
                         />
                         <article className="text-[20px] font-semibold text-primary  mb-2 hover:underline cursor-pointer">
-                          {news?.title?.length > 80
-                            ? `${news?.title?.slice(0, 80)}...`
+                          {news?.title?.length > 70
+                            ? `${news?.title?.slice(0, 70)}...`
                             : news?.title}
                         </article>
                         <article className="text-[14px] text-secondary  mb-2">
                           {news?.summary?.length > 150
                             ? `${news?.summary?.slice(0, 150)}...`
                             : news?.summary}{" "}
-                          <span className="text-[12px] cursor-pointer underline text-[#ccc] ml-2">
-                            Read More
-                          </span>
                         </article>
                       </div>
                     </div>

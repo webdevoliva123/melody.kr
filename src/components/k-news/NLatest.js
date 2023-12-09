@@ -63,7 +63,7 @@ const NLatest = () => {
                 {/* layer */}
                 <div className="w-full h-full absolute top-0 left-0 bg-layer bg-opacity-[0.4] z-[1]"></div>
                 {/* info */}
-                <div className="absolute bottom-0 left-0 w-full  p-5 flex justify-start items-end z-[2] mb-2 ">
+                <div className="absolute bottom-0 left-0 w-full  p-5 flex justify-start items-end z-[2] mb-2 card_content ">
                   {/* div */}
                   <div>
                     <article className="text-white  text-xs cursor-pointer uppercase mb-2 opacity-[0.9]">

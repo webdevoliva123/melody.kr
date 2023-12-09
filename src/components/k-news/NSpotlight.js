@@ -26,7 +26,7 @@ const NSpotlight = () => {
         </div>
       </div>
       {/* section */}
-      <div className="w-full md:h-[55vh] h-auto flex md:flex-row flex-col justify-center items-center gap-5">
+      <div className="w-full md:h-[55vh] h-auto flex md:flex-row flex-col justify-center items-center gap-5 card_container">
         {/* main div */}
         <div className=" relative lg:flex-[0.7] md:flex-[0.6] flex-[1] w-full h-full rounded-lg overflow-hidden">
           <Image
@@ -34,12 +34,12 @@ const NSpotlight = () => {
             alt={snews[0]?.title}
             width={500}
             height={500}
-            className="relative w-full h-full object-cover"
+            className="relative w-full h-full object-cover card_image"
           />
           {/* layer */}
           <div className="w-full h-full absolute top-0 left-0 bg-layer bg-opacity-[0.6] z-[1]"></div>
           {/* info */}
-          <div className="absolute bottom-0 left-0 w-full  p-5 flex justify-start items-end z-[2] mb-5">
+          <div className="absolute bottom-0 left-0 w-full  p-5 flex justify-start items-end z-[2] mb-5 card_content">
             {/* div */}
             <div>
               <article className="text-white text-xs cursor-pointer uppercase mb-2 opacity-[0.9]">
