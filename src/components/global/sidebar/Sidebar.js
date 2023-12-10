@@ -18,9 +18,9 @@ const SidebarLink = ({ link }) => {
         }`}
       >
         <Link href={link?.url}>
-          <article className="text-sm cursor-pointer">{link?.name}</article>
+          <article className="text-sm text-primary cursor-pointer">{link?.name}</article>
         </Link>
-        {link?.subcategory && <IoChevronDownOutline size={15} className="" />}
+        {link?.subcategory && <IoChevronDownOutline size={15} className="text-primary" />}
       </div>
       {link?.subcategory && (
         <div
@@ -31,7 +31,7 @@ const SidebarLink = ({ link }) => {
           {link?.subcategory?.map((sublink, idx) => {
             return (
               <Link key={idx} href={sublink?.url}>
-                <article className={`text-xs cursor-pointer ${(link?.subcategory?.length -1 ) !== idx && 'mb-4'}`}>
+                <article className={`text-xs text-primary cursor-pointer ${(link?.subcategory?.length -1 ) !== idx && 'mb-4'}`}>
                    / {sublink?.name}
                 </article>
               </Link>
