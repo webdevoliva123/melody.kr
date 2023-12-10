@@ -11,6 +11,7 @@ import { HiOutlineShoppingCart } from "react-icons/hi";
 import { defaultLinks, k_NewsLinks } from "@/constant/links";
 import Link from "next/link";
 import Sidebar from "../sidebar/Sidebar";
+import Searchbar from "../searchbar/SearchBar";
 
 const Header = () => {
   const router = useRouter();
@@ -19,6 +20,7 @@ const Header = () => {
   const [melodyTheme, setMelodyTheme] = useState(null);
   const [currentStateLink, setCurrentStateLink] = useState([]);
   const [openSidebar,setOpenSidebar] = useState(false)
+  const [openSearchbar,setOpenSearchbar] = useState(false)
 
   useEffect(() => {
     const observer = new MutationObserver((mutationsList) => {
@@ -73,7 +75,13 @@ const Header = () => {
   }, [router]);
 
   const openSidebarHandler = () => {
+    setOpenSearchbar(false)
     return setOpenSidebar(true)
+  }
+
+  const openSearchbarHandler = () => {
+    setOpenSidebar(false)
+    return setOpenSearchbar(true)
   }
 
   return (
@@ -168,10 +176,12 @@ const Header = () => {
             size={20}
             className="text-primary hover:text-accent cursor-pointer ease-in duration-150"
           />
+          <div onClick={openSearchbarHandler}>
           <RiSearch2Line
             size={20}
             className="text-primary hover:text-accent cursor-pointer ease-in duration-150"
           />
+          </div>
           <FaUser
             size={20}
             className="text-primary hover:text-accent cursor-pointer ease-in duration-150"
@@ -202,6 +212,8 @@ const Header = () => {
     </div>
     {/* main sidebar */}
     <Sidebar open={openSidebar} setSidebarOpen={setOpenSidebar} />
+    {/* main searchbar */}
+    <Searchbar open={openSearchbar} setSearchbarOpen={setOpenSearchbar} />
     </>
   );
 };
