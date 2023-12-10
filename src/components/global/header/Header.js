@@ -10,6 +10,7 @@ import { FaXTwitter } from "react-icons/fa6";
 import { HiOutlineShoppingCart } from "react-icons/hi";
 import { defaultLinks, k_NewsLinks } from "@/constant/links";
 import Link from "next/link";
+import Sidebar from "../sidebar/Sidebar";
 
 const Header = () => {
   const router = useRouter();
@@ -17,6 +18,7 @@ const Header = () => {
   const [sticky, setSticky] = useState(false);
   const [melodyTheme, setMelodyTheme] = useState(null);
   const [currentStateLink, setCurrentStateLink] = useState([]);
+  const [openSidebar,setOpenSidebar] = useState(false)
 
   useEffect(() => {
     const observer = new MutationObserver((mutationsList) => {
@@ -70,7 +72,13 @@ const Header = () => {
     }
   }, [router]);
 
+  const openSidebarHandler = () => {
+    return setOpenSidebar(true)
+  }
+
   return (
+    <>
+    {/* main header */}
     <div
       className={`${
         sticky
@@ -81,7 +89,7 @@ const Header = () => {
       {/* Left Section */}
       <div className="flex justify-start items-center lg:gap-4">
         {/* menu */}
-        <div className="lg:block hidden">
+        <div className="lg:block hidden" onClick={openSidebarHandler}>
           <BsFillGridFill
             size={30}
             className="text-primary hover:text-accent cursor-pointer ease-in duration-150"
@@ -184,7 +192,7 @@ const Header = () => {
           </div>
         </div>
         {/* menu */}
-        <div className="lg:hidden block">
+        <div className="lg:hidden block" onClick={openSidebarHandler}>
           <BsFillGridFill
             size={30}
             className=" text-primary hover:text-accent cursor-pointer"
@@ -192,6 +200,9 @@ const Header = () => {
         </div>
       </div>
     </div>
+    {/* main sidebar */}
+    <Sidebar open={openSidebar} setSidebarOpen={setOpenSidebar} />
+    </>
   );
 };
 

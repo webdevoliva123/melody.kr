@@ -37,5 +37,15 @@ html{
   display: none;
 }
 
+.melody-scroll::-webkit-scrollbar{
+  width: 4px;
+}
 
+.melody-scroll::-webkit-scrollbar-track{
+  background: transparent;
+}
 
+.melody-scroll::-webkit-scrollbar-thumb{
+  background: #3d55ef;
+  border-radius: 20px;
+}

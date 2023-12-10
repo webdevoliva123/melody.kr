@@ -3,7 +3,7 @@
 export const defaultLinks = [
   {
     id: "kNews",
-    name: "k-News",
+    name: "News",
     subCategory: false,
     url : '/news'
   },
@@ -21,7 +21,7 @@ export const defaultLinks = [
   },
   {
     id: "kprofile",
-    name: "K-Profile",
+    name: "Profile",
     subCategory: true,
     url : '/'
   },
@@ -71,3 +71,59 @@ export const k_NewsLinks = [
     url : '/news/categories/features'
   },
 ];
+
+export const sibarLinks = [
+  {
+    name : 'News',
+    url :'/news',
+    subcategory : [
+      {
+       
+        name: "Videos",
+        url : '/news/categories/video'
+      },
+      {
+        name: "Style",
+        url : '/news/categories/style'
+      },
+      {
+        name: "Drama",
+        url : '/news/categories/film'
+      },
+      {
+        name: "Music",
+        url : '/news/categories/music'
+      },
+      {
+        name: "Features",
+        url : '/news/categories/features'
+      },
+    ]
+  },
+  {
+    
+    name: "Blogs",
+    url : '/',
+    subcategory : null
+  },
+  {
+    name: "Music",
+    url : '/',
+    subcategory : null
+  },
+  {
+    name: "Profile",
+    url : '/',
+    subcategory : null
+  },
+  {
+    name: "Shopping",
+    url : '/',
+    subcategory : null
+  },
+  {
+    name: "Malody Family",
+    url : '/',
+    subcategory : null
+  },
+]
