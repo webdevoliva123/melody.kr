@@ -8,7 +8,7 @@ import news_features from "@/json/news/category/features.json";
 import Image from "next/image";
 import { GoDotFill } from "react-icons/go";
 import Button from "@/elements/Button";
-import Popular_cover from "@/components/k-news/categories.js/Popular_cover";
+import Popular_cover from "@/components/k-news/categories/Popular_cover";
 import NCategories from "@/components/k-news/NCategories";
 import MelodyCategores from "@/components/allInOne/homepage/categores/MelodyCategores";
 import Heading from "@/elements/Heading";
@@ -180,11 +180,13 @@ const Categories = () => {
                           htype={2}
                           custcss="!text-primary mb-2 !text-[14px]"
                         />
-                        <article className="text-[20px] font-semibold text-primary  mb-2 hover:underline cursor-pointer">
+                       <Link href={`/news/article/${news?.id}`}>
+                       <article className="text-[20px] font-semibold text-primary  mb-2 hover:underline cursor-pointer">
                           {news?.title?.length > 70
                             ? `${news?.title?.slice(0, 70)}...`
                             : news?.title}
                         </article>
+                       </Link>
                         <article className="text-[14px] text-secondary  mb-2">
                           {news?.summary?.length > 150
                             ? `${news?.summary?.slice(0, 150)}...`

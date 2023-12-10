@@ -1,5 +1,7 @@
+import MelodyCategores from "@/components/allInOne/homepage/categores/MelodyCategores";
 import Article from "@/components/k-news/article.js/Article";
-import Popular_cover from "@/components/k-news/categories.js/Popular_cover";
+import RelatedArticle from "@/components/k-news/article.js/RelatedArticle";
+import Popular_cover from "@/components/k-news/categories/Popular_cover";
 import Head from "next/head";
 import React from "react";
 
@@ -22,6 +24,9 @@ const Article_Data = () => {
           <div className="mb-6">
             <Popular_cover />
           </div>
+          <div className="my-6">
+              <MelodyCategores title={"Explore Other Section"} />
+            </div>
         </div>
       </div>
     </>

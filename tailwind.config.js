@@ -21,6 +21,10 @@ module.exports = {
         'secondary':"var(--text-secondary)",
         'loading':'var(--bg-secondary)'
       },
+      borderColor:{
+        'primary':'var(--text-primary)',
+        'secondary':'var(--text-secondary)'
+      },
       colors:{
         'accent':'#3d55ef',
         'white':'#fff',
