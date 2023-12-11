@@ -11,7 +11,7 @@ import { HiOutlineShoppingCart } from "react-icons/hi";
 import { defaultLinks, k_NewsLinks } from "@/constant/links";
 import Link from "next/link";
 import Sidebar from "../sidebar/Sidebar";
-import Searchbar from "../searchbar/SearchBar";
+import Searchbar from "../searchbar/Searchbar";
 
 const Header = () => {
   const router = useRouter();
