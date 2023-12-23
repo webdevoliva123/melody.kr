@@ -4,14 +4,8 @@ export const defaultLinks = [
   {
     id: "kNews",
     name: "News",
-    subCategory: false,
+    subCategory: true,
     url : '/news'
-  },
-  {
-    id: "blogs",
-    name: "Blogs",
-    subCategory: false,
-    url : '/'
   },
   {
     id: "music",
@@ -21,7 +15,7 @@ export const defaultLinks = [
   },
   {
     id: "kprofile",
-    name: "Profile",
+    name: "Drama",
     subCategory: true,
     url : '/'
   },
@@ -112,7 +106,7 @@ export const sibarLinks = [
     subcategory : null
   },
   {
-    name: "Profile",
+    name: "Drama",
     url : '/',
     subcategory : null
   },

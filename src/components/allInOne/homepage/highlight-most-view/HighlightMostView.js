@@ -46,11 +46,6 @@ const HighlightMostView = () => {
             <SwiperSlide className="w-full !flex justify-start items-center gap-4">
               {/* images */}
               <div className="relative rounded-full w-[80px] h-[80px]">
-                {blog?.rating && 
-                <div className={` lg:flex hidden absolute -left-[10px] w-[40px] h-[25px]  justify-center items-center rounded-lg ${ratingBgProvider(blog?.rating)}`}>
-                    <span className="text-xs text-white">{blog?.rating}</span>
-                </div>
-                } 
                 <Image
                   src={blog?.image}
                   alt={blog?.title}

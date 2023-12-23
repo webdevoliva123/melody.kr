@@ -7,6 +7,8 @@
 
 /* files */
 @import './cards.style.css';
+@import './articles.style.css';
+@import './loading.style.css';
 
 *{
   margin: 0;

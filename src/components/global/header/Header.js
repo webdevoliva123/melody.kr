@@ -89,7 +89,7 @@ const Header = () => {
     {/* main header */}
     <div
       className={`${
-        sticky
+        sticky && !router.pathname.includes('article')
           ? "fixed lg:max-w-[1200px] lg:w-[1200px] w-full mx-auto top-0 lg:left-auto left-0 ease-in duration-500"
           : "relative"
       }  bg-secondary p-5  h-[80px] rounded-lg flex justify-between items-center lg:mb-6 mb-5 z-[1000]`}

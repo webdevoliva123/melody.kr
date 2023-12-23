@@ -1,5 +1,6 @@
 import Button from '@/elements/Button'
 import Heading from '@/elements/Heading'
+import Image from 'next/image'
 import React from 'react'
 
 const ArticleComments = () => {
@@ -8,6 +9,7 @@ const ArticleComments = () => {
         <Heading label={'Comment Your Opinion'} htype={1}  />
          <textarea  className='w-full h-[200px] bg-transparent border-[1px] border-secondary my-4 rounded-lg resize-none p-4 font-light text-sm placeholder:font-light placeholder:text-secondary text-secondary outline-none' placeholder='Your Comment*' ></textarea>   
          <Button label={'Post Comment'} btnType={1} css={'!inline-block p-4'} />
+       
     </div>
   )
 }
