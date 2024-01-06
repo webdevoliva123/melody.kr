@@ -2,10 +2,12 @@ import React, { useState, useEffect } from "react";
 import trendingNews from "@/json/highlightTrendingNews.json";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
+import {timeAgo} from '@/utils/dateformatter'
 
 // swiper css
 import "swiper/css";
 import { Autoplay } from "swiper/modules";
+import { reDirectToRead } from "@/utils/reDirectToRead";
 
 export const HightlightMainCard = ({ blog, slideIndex }) => {
   const [count, setCount] = useState(1);
@@ -46,16 +48,17 @@ export const HightlightMainCard = ({ blog, slideIndex }) => {
             {blog?.category}
           </article>
           <article
-            className="text-white text-sm font-semibold mb-3"
+            className="text-white md:text-lg text-sm font-semibold mb-3 cursor-pointer hover:underline"
             title={blog?.title}
+            onClick={() => reDirectToRead(blog?._id,blog?.category)}
           >
             {blog?.title?.length > 100
               ? `${blog?.title?.slice(0, 100)}...`
               : blog?.title}
           </article>
           <article className="text-xs text-dark cursor-pointer">
-            <span>{blog?.creator}</span> . <span>{`${blog?.view} views`}</span>{" "}
-            . <span>{blog?.created_At}</span>
+            <span>{blog?.author?.name}</span> . <span>{`${blog?.views} views`}</span>{" "}
+            . <span>{timeAgo(blog?.created_At)}</span>
           </article>
           <div className="w-full h-[1px] bg-black relative mt-5">
             <div
@@ -69,7 +72,7 @@ export const HightlightMainCard = ({ blog, slideIndex }) => {
   );
 };
 
-const HighlightTrendingNews = () => {
+const HighlightTrendingNews = ({loading,data}) => {
   const [slideIndex, setSlideIndex] = useState(null);
   return (
     <>
@@ -77,8 +80,8 @@ const HighlightTrendingNews = () => {
       <div className="w-full h-[75vh] grid-cols-[28.3%,40%,28.3%] gap-5 lg:grid hidden z-[0]">
         {/* left section */}
         <div className="w-full h-full grid grid-rows-2 gap-5">
-          {trendingNews?.map((blog, idx) => {
-            if (blog?.id > 2 && blog?.id <= 4) {
+          {data?.map((blog, idx) => {
+            if (idx > 2 && idx <= 4) {
               return (
                 <div
                   key={idx}
@@ -102,17 +105,18 @@ const HighlightTrendingNews = () => {
                         {blog?.category}
                       </article>
                       <article
-                        className="text-white text-sm font-semibold mb-3"
+                        className="text-white text-sm font-semibold mb-3 cursor-pointer hover:underline"
                         title={blog?.title}
+                        onClick={() => reDirectToRead(blog?._id,blog?.category)}
                       >
                         {blog?.title?.length > 100
                           ? `${blog?.title?.slice(0, 100)}...`
                           : blog?.title}
                       </article>
                       <article className="text-xs text-dark cursor-pointer">
-                        <span>{blog?.creator}</span> .{" "}
-                        <span>{`${blog?.view} views`}</span> .{" "}
-                        <span>{blog?.created_At}</span>
+                        <span>{blog?.author?.name}</span> .{" "}
+                        <span>{`${blog?.views} views`}</span> .{" "}
+                        <span>{timeAgo(blog?.createdAt)}</span>
                       </article>
                     </div>
                   </div>
@@ -136,8 +140,8 @@ const HighlightTrendingNews = () => {
             className="mySwiper"
             onSlideChange={(slider) => setSlideIndex(slider.realIndex)}
           >
-            {trendingNews?.map((blog, idx) => {
-              if (blog?.id > 0 && blog?.id <= 2) {
+            {data?.map((blog, idx) => {
+              if (idx > 0 && idx <= 2) {
                 return (
                   <SwiperSlide
                     key={idx}
@@ -152,8 +156,8 @@ const HighlightTrendingNews = () => {
         </div>
         {/* right section */}
         <div className="w-full h-full grid grid-rows-2 gap-5">
-          {trendingNews?.map((blog, idx) => {
-            if (blog?.id > 4 && blog?.id <= 6) {
+          {data?.map((blog, idx) => {
+            if (idx> 4 && idx<= 6) {
               return (
                 <div
                   key={idx}
@@ -177,17 +181,18 @@ const HighlightTrendingNews = () => {
                         {blog?.category}
                       </article>
                       <article
-                        className="text-white text-sm font-semibold mb-3"
+                        className="text-white text-sm font-semibold mb-3 cursor-pointer hover:underline"
                         title={blog?.title}
+                        onClick={() => reDirectToRead(blog?._id,blog?.category)}
                       >
                         {blog?.title?.length > 100
                           ? `${blog?.title?.slice(0, 100)}...`
                           : blog?.title}
                       </article>
                       <article className="text-xs text-dark cursor-pointer">
-                        <span>{blog?.creator}</span> .{" "}
-                        <span>{`${blog?.view} views`}</span> .{" "}
-                        <span>{blog?.created_At}</span>
+                        <span>{blog?.author?.name}</span> .{" "}
+                        <span>{`${blog?.views} views`}</span> .{" "}
+                        <span>{timeAgo(blog?.createdAt)}</span>
                       </article>
                     </div>
                   </div>
@@ -213,8 +218,8 @@ const HighlightTrendingNews = () => {
             className="mySwiper"
             onSlideChange={(slider) => setSlideIndex(slider.realIndex)}
           >
-            {trendingNews?.map((blog, idx) => {
-              if (blog?.id > 0 && blog?.id <= 2) {
+            {data?.map((blog, idx) => {
+              if (idx> 0 && idx<= 2) {
                 return (
                   <SwiperSlide
                     key={idx}
@@ -228,8 +233,8 @@ const HighlightTrendingNews = () => {
           </Swiper>
         </div>
         <div className="lg:hidden w-full grid md:grid-cols-2  grid-cols-1 gap-5 z-[0]">
-          {trendingNews?.map((blog, idx) => {
-            if (blog?.id > 2) {
+          {data?.map((blog, idx) => {
+            if (idx > 2) {
               return (
                 <div
                   key={idx}
@@ -253,17 +258,18 @@ const HighlightTrendingNews = () => {
                         {blog?.category}
                       </article>
                       <article
-                        className="text-white text-sm font-semibold mb-3"
+                        className="text-white text-sm font-semibold mb-3 cursor-pointer hover:underline"
                         title={blog?.title}
+                        onClick={() => reDirectToRead(blog?._id,blog?.category)}
                       >
                         {blog?.title?.length > 100
                           ? `${blog?.title?.slice(0, 100)}...`
                           : blog?.title}
                       </article>
-                      <article className="text-xs text-dark cursor-pointer">
-                        <span>{blog?.creator}</span> .{" "}
-                        <span>{`${blog?.view} views`}</span> .{" "}
-                        <span>{blog?.created_At}</span>
+                      <article className="text-xs text-dark cursor-pointer ">
+                        <span>{blog?.author?.name}</span> .{" "}
+                        <span>{`${blog?.views} views`}</span> .{" "}
+                        <span>{timeAgo(blog?.created_At)}</span>
                       </article>
                     </div>
                   </div>

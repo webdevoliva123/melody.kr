@@ -1,15 +1,25 @@
 "use client";
-import React from "react";
-import blogs from "@/json/highlightMostViewBlog.json";
+import React, { useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // swiper css
 import "swiper/css";
 import Image from "next/image";
 import { Autoplay } from "swiper/modules";
-import { ratingBgProvider } from "@/constant/ratings";
-const HighlightMostView = () => {
-  return (
+import { timeAgo } from "@/utils/dateformatter";
+import { reDirectToRead } from "@/utils/reDirectToRead";
+
+
+
+const HighlightMostView = ({ loading, data }) => {
+  return loading ? (
+    <div className="p-5 rounded-lg bg-secondary h-[90px] grid md:grid-cols-4  grid-cols-1 gap-10">
+      <div className="md:block hidden w-full h-full bg-primary rounded-lg animate-pulse"></div>
+      <div className="md:block hidden w-full h-full bg-primary rounded-lg animate-pulse"></div>
+      <div className="md:block hidden w-full h-full bg-primary rounded-lg animate-pulse"></div>
+      <div className="md:block hidden w-full h-full bg-primary rounded-lg animate-pulse"></div>
+    </div>
+  ) : (
     <div className="p-5 rounded-lg bg-secondary ">
       <Swiper
         slidesPerView={1}
@@ -30,44 +40,45 @@ const HighlightMostView = () => {
             spaceBetween: 6,
           },
           768: {
-            slidesPerView: 2,
+            slidesPerView: 4,
             spaceBetween: 4,
           },
           500: {
-            slidesPerView: 1,
+            slidesPerView: 4,
             spaceBetween: 0,
           },
         }}
         modules={[Autoplay]}
         className="mySwiper"
       >
-        {blogs?.map((blog) => {
+        {data?.map((blog) => {
           return (
-            <SwiperSlide className="w-full !flex justify-start items-center gap-4">
-              {/* images */}
-              <div className="relative rounded-full w-[80px] h-[80px]">
-                <Image
-                  src={blog?.image}
-                  alt={blog?.title}
-                  width={500}
-                  height={500}
-                  className="reltaive w-full h-full object-cover rounded-full"
-                />
-              </div>
-              {/* context  */}
-              <div className="flex-1">
-              
-                <article
-                  className="cursor-pointer text-[.82em] font-[600] text-primary hover:underline hover:ease-linear hover:duration-300 "
-                  title={blog?.title}
-                >
-                  {blog?.title.length > 45
-                    ? `${blog?.title?.slice(0, 45)}...`
-                    : blog?.title}
-                </article>
-                <span className="text-[10px] font-[500] uppercase text-secondary">
-                  {blog?.views} Views . {blog?.rating && `${blog?.rating} Rating . `} {blog?.created_At} 
-                </span>
+            <SwiperSlide>
+              <div
+                title={blog?.title}
+                className="w-full !flex justify-start items-center gap-4"
+              >
+                {/* images */}
+                <div className="relative rounded-full w-[80px] h-[80px]">
+                  <Image
+                    src={blog?.thumbnail}
+                    alt={blog?.title}
+                    width={500}
+                    height={500}
+                    className="reltaive w-full h-full object-cover rounded-full"
+                  />
+                </div>
+                {/* context  */}
+                <div className="flex-1">
+                  <article className="cursor-pointer text-[.82em] font-[600] text-primary hover:underline hover:ease-linear hover:duration-300" onClick={() => reDirectToRead(blog?._id,blog?.category)}>
+                    {blog?.title.length > 40
+                      ? `${blog?.title?.slice(0, 40)}...`
+                      : blog?.title}
+                  </article>
+                  <span className="text-[10px] font-[500] uppercase text-secondary">
+                    {blog?.category} . {timeAgo(blog?.createdAt)}
+                  </span>
+                </div>
               </div>
             </SwiperSlide>
           );
