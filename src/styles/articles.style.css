@@ -1,5 +1,37 @@
-.article_post{
-    width: 100%;
-    margin: 10px 0;
-    object-fit: cover;
+
+.article_extralarge_heading{
+    font-size: 60px;
+    font-weight: bolder;
 }
+
+.article_large_heading{
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.article_medium_heading{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+
+.article_post {
+  width: 100%;
+  margin: 10px 0;
+  object-fit: cover;
+}
+
+.quote_open,
+.quote_close{
+    font-size: 50px;
+    line-height: 0;
+}
+
+ul.article_list_disc {
+  list-style: disc;
+  list-style-position: inside;
+}
+ul.article_list_disc li{
+    margin-bottom: 5px;
+}
+
