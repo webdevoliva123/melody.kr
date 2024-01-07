@@ -249,7 +249,7 @@ const HighlightTrendingNews = ({ loading, data }) => {
                 return (
                   <SwiperSlide
                     key={idx}
-                    className="relative w-full !h-[75vh] rounded-lg overflow-hidden"
+                    className="relative w-full md:!h-[75vh] !h-[50vh] rounded-lg overflow-hidden"
                   >
                     <HightlightMainCard blog={blog} slideIndex={slideIndex} />
                   </SwiperSlide>
@@ -273,7 +273,7 @@ const HighlightTrendingNews = ({ loading, data }) => {
               return (
                 <div
                   key={idx}
-                  className="relative w-full h-[40vh] rounded-lg overflow-hidden "
+                  className="relative w-full md:h-[40vh] h-[30vh] rounded-lg overflow-hidden "
                 >
                   {/* image */}
                   <Image

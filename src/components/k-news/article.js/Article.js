@@ -90,9 +90,9 @@ const Article = ({ loading, data }) => {
         {/* ---------------------------------------------------------- */}
         {/* thumbnail */}
         {loading ? (
-          <div className="w-full h-[55vh] rounded-lg bg-secondary overflow-hidden relative mb-6 animate-pulse"></div>
+          <div className="w-full md:h-[55vh] h-[40vh] rounded-lg bg-secondary overflow-hidden relative mb-6 animate-pulse"></div>
         ) : (
-          <div className="w-full h-[55vh] rounded-lg bg-secondary overflow-hidden relative mb-6">
+          <div className="w-full md:h-[55vh] h-[40vh] rounded-lg bg-secondary overflow-hidden relative mb-6">
             {/* bg-image */}
             <Image
               src={data?.thumbnail}

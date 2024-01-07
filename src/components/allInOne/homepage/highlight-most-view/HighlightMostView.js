@@ -22,8 +22,8 @@ const HighlightMostView = ({ loading, data }) => {
   ) : (
     <div className="p-5 rounded-lg bg-secondary ">
       <Swiper
-        slidesPerView={1}
-        spaceBetween={0}
+        slidesPerView={3.2}
+        spaceBetween={10}
         autoplay={{
           delay: 1500,
           disableOnInteraction: false,
@@ -36,16 +36,16 @@ const HighlightMostView = ({ loading, data }) => {
             spaceBetween: 10,
           },
           1024: {
-            slidesPerView: 3,
-            spaceBetween: 6,
+            slidesPerView: 3.2,
+            spaceBetween: 10,
           },
           768: {
-            slidesPerView: 4,
-            spaceBetween: 4,
+            slidesPerView: 2.5,
+            spaceBetween: 10,
           },
           500: {
-            slidesPerView: 4,
-            spaceBetween: 0,
+            slidesPerView: 3.2,
+            spaceBetween: 10,
           },
         }}
         modules={[Autoplay]}
@@ -56,10 +56,10 @@ const HighlightMostView = ({ loading, data }) => {
             <SwiperSlide>
               <div
                 title={blog?.title}
-                className="w-full !flex justify-start items-center gap-4"
+                className="w-full !flex md:flex-row flex-col justify-start items-center md:gap-4"
               >
                 {/* images */}
-                <div className="relative rounded-full w-[80px] h-[80px]">
+                <div className="relative rounded-full w-[80px] h-[80px] md:border-none border-2 border-accent md:p-0 p-1 md:md-0 mb-2" onClick={() => reDirectToRead(blog?._id,blog?.category)}>
                   <Image
                     src={blog?.thumbnail}
                     alt={blog?.title}
@@ -68,8 +68,13 @@ const HighlightMostView = ({ loading, data }) => {
                     className="reltaive w-full h-full object-cover rounded-full"
                   />
                 </div>
+                {/* context for mobile */}
+                <div className="md:hidden block">
+                  <article className="text-primary text-xs text-center uppercase">{blog?.category}</article>
+                  <article className="text-primary text-xs capitalize text-center">{timeAgo(blog?.createdAt)}</article>
+                </div>
                 {/* context  */}
-                <div className="flex-1">
+                <div className="md:block hidden flex-1 ">
                   <article className="cursor-pointer text-[.82em] font-[600] text-primary hover:underline hover:ease-linear hover:duration-300" onClick={() => reDirectToRead(blog?._id,blog?.category)}>
                     {blog?.title.length > 40
                       ? `${blog?.title?.slice(0, 40)}...`
