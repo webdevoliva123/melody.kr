@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import trendingNews from "@/json/highlightTrendingNews.json";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
-import {timeAgo} from '@/utils/dateformatter'
+import { timeAgo } from "@/utils/dateformatter";
 
 // swiper css
 import "swiper/css";
@@ -50,15 +50,16 @@ export const HightlightMainCard = ({ blog, slideIndex }) => {
           <article
             className="text-white md:text-lg text-sm font-semibold mb-3 cursor-pointer hover:underline"
             title={blog?.title}
-            onClick={() => reDirectToRead(blog?._id,blog?.category)}
+            onClick={() => reDirectToRead(blog?._id, blog?.category)}
           >
             {blog?.title?.length > 100
               ? `${blog?.title?.slice(0, 100)}...`
               : blog?.title}
           </article>
           <article className="text-xs text-dark cursor-pointer">
-            <span>{blog?.author?.name}</span> . <span>{`${blog?.views} views`}</span>{" "}
-            . <span>{timeAgo(blog?.created_At)}</span>
+            <span>{blog?.author?.name}</span> .{" "}
+            <span>{`${blog?.views} views`}</span> .{" "}
+            <span>{timeAgo(blog?.created_At)}</span>
           </article>
           <div className="w-full h-[1px] bg-black relative mt-5">
             <div
@@ -72,61 +73,164 @@ export const HightlightMainCard = ({ blog, slideIndex }) => {
   );
 };
 
-const HighlightTrendingNews = ({loading,data}) => {
+const HighlightTrendingNews = ({ loading, data }) => {
   const [slideIndex, setSlideIndex] = useState(null);
   return (
     <>
       {/* for desktop view */}
       <div className="w-full h-[75vh] grid-cols-[28.3%,40%,28.3%] gap-5 lg:grid hidden z-[0]">
         {/* left section */}
-        <div className="w-full h-full grid grid-rows-2 gap-5">
-          {data?.map((blog, idx) => {
-            if (idx > 2 && idx <= 4) {
-              return (
-                <div
-                  key={idx}
-                  className="card_container relative w-full h-full rounded-lg overflow-hidden"
-                >
-                  {/* image */}
-                  <Image
-                    src={blog?.thumbnail}
-                    alt={blog?.title}
-                    width={500}
-                    height={500}
-                    className="card_image relative w-full h-full object-cover"
-                  />
-                  {/* layer */}
-                  <div className="absolute top-0 left-0 bg-layer opacity-[0.9]  w-full h-full z-[1]"></div>
-                  {/* info */}
-                  <div className="absolute bottom-0 left-0 p-5 flex justify-start items-end z-[2] card_content">
-                    {/* div */}
-                    <div>
-                      <article className="text-white cursor-pointer text-[10px] uppercase mb-2 opacity-[0.9]">
-                        {blog?.category}
-                      </article>
-                      <article
-                        className="text-white text-sm font-semibold mb-3 cursor-pointer hover:underline"
-                        title={blog?.title}
-                        onClick={() => reDirectToRead(blog?._id,blog?.category)}
-                      >
-                        {blog?.title?.length > 100
-                          ? `${blog?.title?.slice(0, 100)}...`
-                          : blog?.title}
-                      </article>
-                      <article className="text-xs text-dark cursor-pointer">
-                        <span>{blog?.author?.name}</span> .{" "}
-                        <span>{`${blog?.views} views`}</span> .{" "}
-                        <span>{timeAgo(blog?.createdAt)}</span>
-                      </article>
+        {loading ? (
+          <div className="w-full h-full grid grid-rows-2 gap-5">
+            <div className="relative w-full h-full rounded-lg overflow-hidden bg-secondary animate-pulse"></div>
+            <div className="relative w-full h-full rounded-lg overflow-hidden bg-secondary animate-pulse"></div>
+          </div>
+        ) : (
+          <div className="w-full h-full grid grid-rows-2 gap-5">
+            {data?.map((blog, idx) => {
+              if (idx > 2 && idx <= 4) {
+                return (
+                  <div
+                    key={idx}
+                    className="card_container relative w-full h-full rounded-lg overflow-hidden"
+                  >
+                    {/* image */}
+                    <Image
+                      src={blog?.thumbnail}
+                      alt={blog?.title}
+                      width={500}
+                      height={500}
+                      className="card_image relative w-full h-full object-cover"
+                    />
+                    {/* layer */}
+                    <div className="absolute top-0 left-0 bg-layer opacity-[0.9]  w-full h-full z-[1]"></div>
+                    {/* info */}
+                    <div className="absolute bottom-0 left-0 p-5 flex justify-start items-end z-[2] card_content">
+                      {/* div */}
+                      <div>
+                        <article className="text-white cursor-pointer text-[10px] uppercase mb-2 opacity-[0.9]">
+                          {blog?.category}
+                        </article>
+                        <article
+                          className="text-white text-sm font-semibold mb-3 cursor-pointer hover:underline"
+                          title={blog?.title}
+                          onClick={() =>
+                            reDirectToRead(blog?._id, blog?.category)
+                          }
+                        >
+                          {blog?.title?.length > 100
+                            ? `${blog?.title?.slice(0, 100)}...`
+                            : blog?.title}
+                        </article>
+                        <article className="text-xs text-dark cursor-pointer">
+                          <span>{blog?.author?.name}</span> .{" "}
+                          <span>{`${blog?.views} views`}</span> .{" "}
+                          <span>{timeAgo(blog?.createdAt)}</span>
+                        </article>
+                      </div>
                     </div>
                   </div>
-                </div>
-              );
-            }
-          })}
-        </div>
+                );
+              }
+            })}
+          </div>
+        )}
         {/* middle section */}
-        <div className="w-full h-full  rounded-lg">
+        {loading ? (
+          <div className="w-full h-full rounded-lg bg-secondary animate-pulse"></div>
+        ) : (
+          <div className="w-full h-full rounded-lg">
+            <Swiper
+              slidesPerView={1}
+              spaceBetween={0}
+              autoplay={{
+                delay: 6000,
+                disableOnInteraction: false,
+              }}
+              speed={500}
+              loop
+              modules={[Autoplay]}
+              className="mySwiper"
+              onSlideChange={(slider) => setSlideIndex(slider.realIndex)}
+            >
+              {data?.map((blog, idx) => {
+                if (idx > 0 && idx <= 2) {
+                  return (
+                    <SwiperSlide
+                      key={idx}
+                      className="relative w-full !h-[75vh] rounded-lg overflow-hidden card_container"
+                    >
+                      <HightlightMainCard blog={blog} slideIndex={slideIndex} />
+                    </SwiperSlide>
+                  );
+                }
+              })}
+            </Swiper>
+          </div>
+        )}
+        {/* right section */}
+        {loading ? (
+          <div className="w-full h-full grid grid-rows-2 gap-5">
+            <div className="relative w-full h-full rounded-lg overflow-hidden bg-secondary animate-pulse"></div>
+            <div className="relative w-full h-full rounded-lg overflow-hidden bg-secondary animate-pulse"></div>
+          </div>
+        ) : (
+          <div className="w-full h-full grid grid-rows-2 gap-5">
+            {data?.map((blog, idx) => {
+              if (idx > 4 && idx <= 6) {
+                return (
+                  <div
+                    key={idx}
+                    className="card_container relative w-full h-full rounded-lg overflow-hidden"
+                  >
+                    {/* image */}
+                    <Image
+                      src={blog?.thumbnail}
+                      alt={blog?.title}
+                      width={500}
+                      height={500}
+                      className="card_image relative w-full h-full object-cover"
+                    />
+                    {/* layer */}
+                    <div className="absolute top-0 left-0 bg-layer opacity-[0.9]  w-full h-full z-[1]"></div>
+                    {/* info */}
+                    <div className="card_content absolute bottom-0 left-0 p-5 flex justify-start items-end z-[2]">
+                      {/* div */}
+                      <div>
+                        <article className="text-white cursor-pointer text-[10px] uppercase mb-2 opacity-[0.9]">
+                          {blog?.category}
+                        </article>
+                        <article
+                          className="text-white text-sm font-semibold mb-3 cursor-pointer hover:underline"
+                          title={blog?.title}
+                          onClick={() =>
+                            reDirectToRead(blog?._id, blog?.category)
+                          }
+                        >
+                          {blog?.title?.length > 100
+                            ? `${blog?.title?.slice(0, 100)}...`
+                            : blog?.title}
+                        </article>
+                        <article className="text-xs text-dark cursor-pointer">
+                          <span>{blog?.author?.name}</span> .{" "}
+                          <span>{`${blog?.views} views`}</span> .{" "}
+                          <span>{timeAgo(blog?.createdAt)}</span>
+                        </article>
+                      </div>
+                    </div>
+                  </div>
+                );
+              }
+            })}
+          </div>
+        )}
+      </div>
+
+      {/* for mobile view */}
+      {loading ? (
+        <div className="elative  !h-[75vh] lg:hidden block w-full  rounded-lg  mb-5 z-[0] r overflow-hidden bg-secondary animate-pulse"></div>
+      ) : (
+        <div className="lg:hidden block w-full  rounded-lg  mb-5 z-[0]">
           <Swiper
             slidesPerView={1}
             spaceBetween={0}
@@ -145,84 +249,6 @@ const HighlightTrendingNews = ({loading,data}) => {
                 return (
                   <SwiperSlide
                     key={idx}
-                    className="relative w-full !h-[75vh] rounded-lg overflow-hidden card_container"
-                  >
-                    <HightlightMainCard blog={blog} slideIndex={slideIndex} />
-                  </SwiperSlide>
-                );
-              }
-            })}
-          </Swiper>
-        </div>
-        {/* right section */}
-        <div className="w-full h-full grid grid-rows-2 gap-5">
-          {data?.map((blog, idx) => {
-            if (idx> 4 && idx<= 6) {
-              return (
-                <div
-                  key={idx}
-                  className="card_container relative w-full h-full rounded-lg overflow-hidden"
-                >
-                  {/* image */}
-                  <Image
-                    src={blog?.thumbnail}
-                    alt={blog?.title}
-                    width={500}
-                    height={500}
-                    className="card_image relative w-full h-full object-cover"
-                  />
-                  {/* layer */}
-                  <div className="absolute top-0 left-0 bg-layer opacity-[0.9]  w-full h-full z-[1]"></div>
-                  {/* info */}
-                  <div className="card_content absolute bottom-0 left-0 p-5 flex justify-start items-end z-[2]">
-                    {/* div */}
-                    <div>
-                      <article className="text-white cursor-pointer text-[10px] uppercase mb-2 opacity-[0.9]">
-                        {blog?.category}
-                      </article>
-                      <article
-                        className="text-white text-sm font-semibold mb-3 cursor-pointer hover:underline"
-                        title={blog?.title}
-                        onClick={() => reDirectToRead(blog?._id,blog?.category)}
-                      >
-                        {blog?.title?.length > 100
-                          ? `${blog?.title?.slice(0, 100)}...`
-                          : blog?.title}
-                      </article>
-                      <article className="text-xs text-dark cursor-pointer">
-                        <span>{blog?.author?.name}</span> .{" "}
-                        <span>{`${blog?.views} views`}</span> .{" "}
-                        <span>{timeAgo(blog?.createdAt)}</span>
-                      </article>
-                    </div>
-                  </div>
-                </div>
-              );
-            }
-          })}
-        </div>
-      </div>
-
-      {/* for mobile view */}
-        <div className="lg:hidden block w-full  rounded-lg  mb-5 z-[0]">
-          <Swiper
-            slidesPerView={1}
-            spaceBetween={0}
-            autoplay={{
-              delay: 6000,
-              disableOnInteraction: false,
-            }}
-            speed={500}
-            loop
-            modules={[Autoplay]}
-            className="mySwiper"
-            onSlideChange={(slider) => setSlideIndex(slider.realIndex)}
-          >
-            {data?.map((blog, idx) => {
-              if (idx> 0 && idx<= 2) {
-                return (
-                  <SwiperSlide
-                    key={idx}
                     className="relative w-full !h-[75vh] rounded-lg overflow-hidden"
                   >
                     <HightlightMainCard blog={blog} slideIndex={slideIndex} />
@@ -232,6 +258,15 @@ const HighlightTrendingNews = ({loading,data}) => {
             })}
           </Swiper>
         </div>
+      )}
+      {loading ? (
+        <div className="lg:hidden w-full grid md:grid-cols-2  grid-cols-1 gap-5 z-[0]">
+          <div className="relative w-full h-[40vh] rounded-lg overflow-hidden bg-secondary animate-pulse"></div>
+          <div className="relative w-full h-[40vh] rounded-lg overflow-hidden bg-secondary animate-pulse"></div>
+          <div className="relative w-full h-[40vh] rounded-lg overflow-hidden bg-secondary animate-pulse"></div>
+          <div className="relative w-full h-[40vh] rounded-lg overflow-hidden bg-secondary animate-pulse"></div>
+        </div>
+      ) : (
         <div className="lg:hidden w-full grid md:grid-cols-2  grid-cols-1 gap-5 z-[0]">
           {data?.map((blog, idx) => {
             if (idx > 2) {
@@ -260,7 +295,9 @@ const HighlightTrendingNews = ({loading,data}) => {
                       <article
                         className="text-white text-sm font-semibold mb-3 cursor-pointer hover:underline"
                         title={blog?.title}
-                        onClick={() => reDirectToRead(blog?._id,blog?.category)}
+                        onClick={() =>
+                          reDirectToRead(blog?._id, blog?.category)
+                        }
                       >
                         {blog?.title?.length > 100
                           ? `${blog?.title?.slice(0, 100)}...`
@@ -278,6 +315,7 @@ const HighlightTrendingNews = ({loading,data}) => {
             }
           })}
         </div>
+      )}
     </>
   );
 };
