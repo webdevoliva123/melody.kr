@@ -1,18 +1,35 @@
 import Heading from "@/elements/Heading";
 import MelodyLink from "@/elements/MelodyLink";
-import React from "react";
+import React, {useState,useEffect} from "react";
 import latestNews from "@/json/latestkNews.json";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import Image from "next/image";
 import { Autoplay } from "swiper/modules";
+import { useRouter } from "next/router";
+import melodyapi from "@/apis/_axios";
+import { GetLatestArticlesAPI } from "@/apis/_list";
+import { timeAgo } from "@/utils/dateformatter";
+import { reDirectToRead } from "@/utils/reDirectToRead";
 
 const NLatest = () => {
+  const router = useRouter()
+  const [articles,setArticles] = useState([])
+
+  const getLatestKNews = async () =>{
+    const response = await melodyapi.get(GetLatestArticlesAPI)
+    setArticles(response?.data?.data)
+  }
+
+  useEffect(() => {
+    getLatestKNews()
+  },[router])
+
   return (
     <div>
       <div className="flex justify-between items-center mb-4">
         <Heading label={"Latest News"} />
-        <MelodyLink label="View More" LType={2} />
+        {/* <MelodyLink label="View More" LType={2} /> */}
       </div>
       {/* news */}
       <div className="w-full h-[30vh] ">
@@ -47,7 +64,7 @@ const NLatest = () => {
           modules={[Autoplay]}
           className="mySwiper w-full h-[30vh] z-[0]"
         >
-          {latestNews?.map((news, idx) => {
+          {articles?.map((news, idx) => {
             return (
               <SwiperSlide
                 key={idx}
@@ -72,13 +89,14 @@ const NLatest = () => {
                     <article
                       className="text-white text-[16px]  font-semibold mb-3 hover:underline cursor-pointer"
                       title={news?.title}
+                      onClick={() => reDirectToRead(news?._id,news?.category)}
                     >
                       {news?.title?.length > 60
                         ? `${news?.title?.slice(0, 60)}...`
                         : news?.title}
                     </article>
                     <article className="text-xs text-dark cursor-pointer">
-                      <span>{news?.created_At}</span>
+                      <span>{timeAgo(news?.createdAt)}</span>
                     </article>
                   </div>
                 </div>

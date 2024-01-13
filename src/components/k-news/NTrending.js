@@ -1,19 +1,26 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import trendingNews from "@/json/highlightTrendingNews.json";
 import Image from "next/image";
 import Heading from "@/elements/Heading";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
+import melodyapi from "@/apis/_axios";
+import { GetTrendingArticlesAPI } from "@/apis/_list";
+import { useRouter } from "next/router";
+import { timeAgo } from "@/utils/dateformatter";
+import formatViewsCount from "@/utils/viewsfomatter";
+import { reDirectToRead } from "@/utils/reDirectToRead";
 
 const NTrending = () => {
-  const [slideIndex, setSlideIndex] = useState(1);
+  const [slideIndex, setSlideIndex] = useState(0);
   const [otherNewsData, setOtherNewsData] = useState([]);
+  const router = useRouter()
+  const [articles,setArticles] = useState([])
 
  
   const updateSlides = () => {
-    let filterArray = trendingNews.filter((_, idx) => idx > slideIndex);
-    let prevArray = trendingNews.filter((_, idx) => idx < slideIndex);
+    let filterArray = articles.filter((_, idx) => idx > slideIndex);
+    let prevArray = articles.filter((_, idx) => idx < slideIndex);
     setOtherNewsData([...filterArray, ...prevArray]);
   };
 
@@ -32,6 +39,17 @@ const NTrending = () => {
     };
   }, [slideIndex]);
 
+  const getTrendingNews = async () => {
+    const response = await melodyapi.get(GetTrendingArticlesAPI)
+    setArticles(response?.data?.data)
+    setOtherNewsData(response?.data?.data?.filter((_,idx) => idx !== 0))
+  }
+
+  useEffect(() => {
+    getTrendingNews()
+    
+  },[router])
+
   return (
     <>
       {/* Trending News */}
@@ -47,7 +65,7 @@ const NTrending = () => {
             onSlideChange={(e) => setSlideIndex(e?.activeIndex)}
             className="mySwiper w-full h-full z-[0]"
           >
-            {trendingNews?.map((news, idx) => {
+            {articles?.map((news, idx) => {
               return (
                 <SwiperSlide key={idx} className="w-full h-full card_container">
                   <Image
@@ -69,15 +87,16 @@ const NTrending = () => {
                       <article
                         className="text-white lg:text-[40px] md:text-[30px] text-[20px]  font-semibold mb-3 hover:underline cursor-pointer"
                         title={news?.title}
+                        onClick={() => reDirectToRead(news?._id,news?.category)}
                       >
                         {news?.title?.length > 100
                           ? `${news?.title?.slice(0, 100)}...`
                           : news?.title}
                       </article>
                       <article className="text-xs text-dark cursor-pointer">
-                        <span>{news?.creator}</span> .{" "}
-                        <span>{`${news?.view} views`}</span> .{" "}
-                        <span>{news?.created_At}</span>
+                        <span>{news?.author?.name}</span> .{" "}
+                        <span>{`${formatViewsCount(news?.views)} views`}</span> .{" "}
+                        <span>{timeAgo(news?.createdAt)}</span>
                       </article>
                     </div>
                   </div>
@@ -86,7 +105,7 @@ const NTrending = () => {
             })}
           </Swiper>
           <div className=" absolute bottom-5 left-0 w-full flex justify-center items-center   gap-3 z-[1]">
-            {trendingNews?.map((_, idx) => {
+            {articles?.map((_, idx) => {
               return (
                 <div
                   key={idx}
@@ -104,7 +123,7 @@ const NTrending = () => {
           <div className="w-full h-[95%] grid grid-cols-1 grid-rows-5 gap-4 ">
             {otherNewsData?.map((news, idx) => {
               return (
-                <div key={idx} className="w-full h-full">
+                <div key={idx} className="w-full h-full"  >
                   <div className="w-full !flex justify-start items-center gap-4">
                     {/* images */}
                     <div className="relative rounded-full w-[80px] h-[80px]">
@@ -132,15 +151,15 @@ const NTrending = () => {
                       <article
                         className="cursor-pointer text-[.82em] font-[600] text-primary hover:underline hover:ease-linear hover:duration-300 "
                         title={news?.title}
+                        onClick={() => reDirectToRead(news?._id,news?.category)}
                       >
                         {news?.title?.length > 45
                           ? `${news?.title?.slice(0, 45)}...`
                           : news?.title}
                       </article>
                       <span className="text-[10px] font-[500] uppercase text-secondary">
-                        {news?.views} Views .{" "}
-                        {news?.rating && `${news?.rating} Rating . `}{" "}
-                        {news?.created_At}
+                        {formatViewsCount(news?.views)} Views .{" "}
+                        {timeAgo(news?.createdAt)}
                       </span>
                     </div>
                   </div>
