@@ -13,3 +13,4 @@ export const GetSpotlightArticlesAPI = (spotlight_type) => `api/v1/melody/articl
 export const GetVideosArticlesAPI = `api/v1/melody/article/home/videos`
 export const GetPickedOneArticlesAPI = `api/v1/melody/article/home/pick_one`
 export const GetCatgoriesArticlesAPI = `api/v1/melody/article/home/allCategory`
+export const GetArticlesByCategoryAPI =  (cat_id) => `api/v1/melody/article/category/${cat_id}`
