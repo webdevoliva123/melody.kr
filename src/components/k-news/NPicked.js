@@ -49,7 +49,7 @@ const NPicked = () => {
                     : news?.title}
                 </article>
                 <article className="text-xs text-secondary">
-                  {news?.category}
+                  {news?.subcategory ? news?.subcategory : news?.category}
                 </article>
               </div>
             </div>

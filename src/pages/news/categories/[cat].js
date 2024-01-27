@@ -12,7 +12,7 @@ import Head from "next/head";
 import { GetArticlesByCategoryAPI } from "@/apis/_list";
 import melodyapi from "@/apis/_axios";
 import { timeAgo } from "@/utils/dateformatter";
-import { reDirectToRead } from "@/utils/reDirectToRead";
+import { reDirectToAuthor, reDirectToRead } from "@/utils/reDirectToRead";
 
 const Categories = () => {
   const router = useRouter();
@@ -124,7 +124,7 @@ const Categories = () => {
                       <div className="w-full relative p-5">
                         
                         <Heading
-                          label={`# ${news?.category}`}
+                          label={`${news?.subcategory ? news?.subcategory : news?.category}`}
                           htype={2}
                           custcss="!text-primary mb-2 !text-[14px]"
                         />
@@ -144,7 +144,7 @@ const Categories = () => {
                         <div className="relative">
                           <article className="text-[12px] font-semibold text-primary  ">
                             Posted by{" "}
-                            <span className="text-accent  cursor-pointer">
+                            <span className="text-accent  cursor-pointer" onClick={() => reDirectToAuthor(news?.author?._id)}>
                               {news?.author?.name}
                             </span>
                           </article>

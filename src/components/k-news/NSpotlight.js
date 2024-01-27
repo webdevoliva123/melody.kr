@@ -62,7 +62,7 @@ const NSpotlight = () => {
             {/* div */}
             <div>
               <article className="text-white text-xs cursor-pointer uppercase mb-2 opacity-[0.9]">
-                {articles[0]?.category}
+                { articles[0]?.subcategory ? articles[0]?.subcategory : articles[0]?.category }
               </article>
               <article
                 className="text-white  text-[20px]  font-semibold mb-3 hover:underline cursor-pointer"

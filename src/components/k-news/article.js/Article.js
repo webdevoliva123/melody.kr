@@ -22,7 +22,7 @@ import ArticleUserComments from "./ArticleUserComments";
 import RelatedArticle from "./RelatedArticle";
 import { IoCloseSharp } from "react-icons/io5";
 import GlobalLoading from "@/components/global/loadings/globalLoading";
-import { reDirectToRead } from "@/utils/reDirectToRead";
+import { reDirectToAuthor, reDirectToRead } from "@/utils/reDirectToRead";
 import { timeAgo } from "@/utils/dateformatter";
 
 const shareOptions = [
@@ -131,7 +131,7 @@ const Article = ({ loading, data }) => {
                     </div>
                     <div className="relative">
                      
-                      <article className="text-white font-semibold cursor-pointer">
+                      <article className="text-white font-semibold cursor-pointer" onClick={() => reDirectToAuthor(data?.author?._id)}>
                         {data?.author?.name}
                       </article>
                       <article className="text-secondary text-xs">
@@ -244,11 +244,11 @@ const Article = ({ loading, data }) => {
                 <article className="text-secondary text-xs font-light ">
                   Posted By
                 </article>
-                <Link href={"/news/author/auth_fhb32o9"}>
-                  <article className="text-primary text-[16px] font-semibold cursor-pointer hover:text-accent ">
+                
+                  <article className="text-primary text-[16px] font-semibold cursor-pointer hover:text-accent " onClick={() => reDirectToAuthor(data?.author?._id)}>
                     {data?.author?.name}
                   </article>
-                </Link>
+                
               </div>
               <div className="mx-4 h-[15px] border-r border-primary w-[1px]"></div>
               <div className="flex justify-start items-center gap-2">

@@ -50,7 +50,7 @@ const NWatchout = () => {
                 {/* div */}
                 <div>
                   <article className="text-secondary  text-xs cursor-pointer uppercase mb-2 opacity-[0.9]">
-                    {video?.category}
+                    { video?.subcategory ? video?.subcategory : video?.category}
                   </article>
                   <article
                     className="text-primary text-[16px]  font-semibold mb-3 hover:underline cursor-pointer"

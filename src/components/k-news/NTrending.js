@@ -82,7 +82,7 @@ const NTrending = () => {
                     {/* div */}
                     <div>
                       <article className="text-white md:text-sm text-xs cursor-pointer uppercase mb-2 opacity-[0.9]">
-                        {news?.category}
+                        {news?.subcategory ? news?.subcategory : news?.category}
                       </article>
                       <article
                         className="text-white lg:text-[40px] md:text-[30px] text-[20px]  font-semibold mb-3 hover:underline cursor-pointer"

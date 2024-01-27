@@ -84,7 +84,7 @@ const NLatest = () => {
                   {/* div */}
                   <div>
                     <article className="text-white  text-xs cursor-pointer uppercase mb-2 opacity-[0.9]">
-                      {news?.category}
+                      {news?.subcategory?news?.subcategory:news?.category}
                     </article>
                     <article
                       className="text-white text-[16px]  font-semibold mb-3 hover:underline cursor-pointer"

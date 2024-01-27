@@ -45,7 +45,7 @@ export const HightlightMainCard = ({ blog, slideIndex }) => {
         {/* div */}
         <div>
           <article className="text-white cursor-pointer text-[10px] uppercase mb-2 opacity-[0.9]">
-            {blog?.category}
+            {blog?.subcategory ? blog?.subcategory : blog?.category}
           </article>
           <article
             className="text-white md:text-lg text-sm font-semibold mb-3 cursor-pointer hover:underline"
@@ -109,7 +109,7 @@ const HighlightTrendingNews = ({ loading, data }) => {
                       {/* div */}
                       <div>
                         <article className="text-white cursor-pointer text-[10px] uppercase mb-2 opacity-[0.9]">
-                          {blog?.category}
+                          {blog?.subcategory ? blog?.subcategory : blog?.category} 
                         </article>
                         <article
                           className="text-white text-sm font-semibold mb-3 cursor-pointer hover:underline"
@@ -290,7 +290,7 @@ const HighlightTrendingNews = ({ loading, data }) => {
                     {/* div */}
                     <div>
                       <article className="text-white cursor-pointer text-[10px] uppercase mb-2 opacity-[0.9]">
-                        {blog?.category}
+                        {blog?.subcategory ? blog?.subcategory : blog?.category}
                       </article>
                       <article
                         className="text-white text-sm font-semibold mb-3 cursor-pointer hover:underline"

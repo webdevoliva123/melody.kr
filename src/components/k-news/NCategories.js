@@ -34,7 +34,7 @@ const NCategories = ({title}) => {
     },
   ];
   return (
-    <div className="relative p-5  rounded-lg">
+    <div className="relative p-5  rounded-lg bg-secondary">
       <div className="w-full flex justify-between items-center mb-2">
         <Heading label={title ? title :"Categories"} htype={2}/>
       </div>

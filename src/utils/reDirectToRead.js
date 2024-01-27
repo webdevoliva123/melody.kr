@@ -4,3 +4,8 @@ export const reDirectToRead = (article_id, category) => {
     2
   )}_${article_id}`;
 };
+
+
+export const reDirectToAuthor = (authorId) => {
+  window.location.href = `/news/author/auth_${authorId}`;
+}
