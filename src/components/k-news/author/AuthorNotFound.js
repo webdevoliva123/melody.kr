@@ -1,4 +1,4 @@
-import { reDirectToRead } from "@/utils/reDirectToRead";
+import { reDirectToAuthor } from "@/utils/reDirectToRead";
 import Image from "next/image";
 import React from "react";
 import { FaXTwitter, FaLinkedin } from "react-icons/fa6";
@@ -31,7 +31,7 @@ const AuthorNotFound = ({ data }) => {
               <div className="py-4">
                 <article
                   className=" text-accent uppercase  cursor-pointer text-center font-bold"
-                  onClick={() => reDirectToRead(author?._id, author?.category)}
+                  onClick={() => reDirectToAuthor(author?._id)}
                 >
                   {author?.name}
                 </article>
