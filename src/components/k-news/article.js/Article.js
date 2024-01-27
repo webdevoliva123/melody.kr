@@ -106,7 +106,7 @@ const Article = ({ loading, data }) => {
             {/* bg-content */}
             <div className="absolute top-0 left-0 w-full h-full  z-[2] flex justify-start items-end">
               {/* main-content */}
-              <div className="p-5">
+              <div className="p-5 w-full">
                  {/* gagdets for desktop */}
                  <div className="md:hidden flex justify-start items-center  text-white text-xs  mb-2 ">
                     <article>{data?.views} Views</article>
