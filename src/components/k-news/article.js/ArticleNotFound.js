@@ -18,7 +18,7 @@ const ArticleNotFound = ({data}) => {
                                     <Image  src={article?.thumbnail} width={500} height={500} className="relative w-full h-full object-cover "/>
                                 </div>
                                 <div className="py-4">
-                                    <article className="text-xs text-[#ccc] font-medium">{timeAgo(article?.createdAt)}</article>
+                                    <article className="text-xs text-[#ccc] font-medium mb-2">{timeAgo(article?.createdAt)}</article>
                                     <article className=" text-primary hover:underline cursor-pointer"  onClick={() => reDirectToRead(article?._id,article?.category)}>{article?.title?.length > 50 ? `${article?.title?.slice(0,50)}...` : article?.title}</article>
                                 </div>
                             </div>

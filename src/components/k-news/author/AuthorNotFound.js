@@ -5,7 +5,6 @@ import { FaXTwitter, FaLinkedin } from "react-icons/fa6";
 import { FaInstagram } from "react-icons/fa";
 
 const AuthorNotFound = ({ data }) => {
-  console.log({ data });
   return (
     <div className="w-full  bg-secondary rounded-lg p-5">
       <article className="text-center text-primary md:text-[40px] text-[20px] font-extrabold my-20">
