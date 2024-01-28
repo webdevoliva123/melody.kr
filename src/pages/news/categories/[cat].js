@@ -109,7 +109,7 @@ const Categories = () => {
               {dataList?.map((news, idx) => {
                 if (viewFull ? idx > 0 : idx > 0 && idx < 9) {
                   return (
-                    <div className="w-full  shadow-lg rounded-lg">
+                    <div className="w-full bg-secondary rounded-lg">
                       {/* image */}
                       <Image
                         src={news?.thumbnail}

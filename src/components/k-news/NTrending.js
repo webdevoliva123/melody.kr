@@ -16,6 +16,7 @@ const NTrending = () => {
   const [otherNewsData, setOtherNewsData] = useState([]);
   const router = useRouter()
   const [articles,setArticles] = useState([])
+  const [loading,setLoading] = useState(true)
 
  
   const updateSlides = () => {
@@ -40,9 +41,11 @@ const NTrending = () => {
   }, [slideIndex]);
 
   const getTrendingNews = async () => {
+    setLoading(true)
     const response = await melodyapi.get(GetTrendingArticlesAPI)
     setArticles(response?.data?.data)
     setOtherNewsData(response?.data?.data?.filter((_,idx) => idx !== 0))
+    setLoading(false)
   }
 
   useEffect(() => {
@@ -55,7 +58,7 @@ const NTrending = () => {
       {/* Trending News */}
       <div className="w-full lg:h-[70vh] md:h-[150vh] h-[50vh] grid lg:grid-cols-[69.8%,28.3%] grid-cols-1 lg:gap-5  ">
         {/* left container */}
-        <div className="relative bg-secondary w-full h-full rounded-lg overflow-hidden">
+        {loading ? <div className="relative animate-pulse bg-secondary w-full h-full rounded-lg"></div> : <div className="relative bg-secondary w-full h-full rounded-lg overflow-hidden">
           <Swiper
             key={slideIndex}
             initialSlide={slideIndex}
@@ -116,9 +119,9 @@ const NTrending = () => {
               );
             })}
           </div>
-        </div>
+        </div>}
         {/* right-list */}
-        <div className="bg-secondary w-full h-full rounded-lg overflow-hidden p-5 md:block hidden">
+        {loading ?  <div className="bg-secondary w-full h-full rounded-lg overflow-hidden p-5 md:block hidden"> </div>  : <div className="bg-secondary w-full h-full rounded-lg overflow-hidden p-5 md:block hidden">
           <Heading label={"Trending News "} custcss="mb-4" />
           <div className="w-full h-[95%] grid grid-cols-1 grid-rows-5 gap-4 ">
             {otherNewsData?.map((news, idx) => {
@@ -167,7 +170,7 @@ const NTrending = () => {
               );
             })}
           </div>
-        </div>
+        </div>}
       </div>
     </>
   );

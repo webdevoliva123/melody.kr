@@ -9,16 +9,21 @@ import { reDirectToRead } from "@/utils/reDirectToRead";
 
 const Popular_cover = () => {
   const [articles, setArticles] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const getLatestArticle = async () => {
+    setLoading(true);
     const response = await melodyapi.get(GetLatestArticlesAPI);
     setArticles(response?.data?.data);
+    setLoading(false);
   };
 
   useEffect(() => {
     getLatestArticle();
   }, []);
-  return (
+  return loading ? (
+    <div className="w-full rounded-lg bg-secondary p-5 h-[75vh] animate-pulse"></div>
+  ) : (
     <div className="w-full rounded-lg bg-secondary p-5">
       <Heading label={"Latest Article"} htype={2} custcss="mb-4" />
       <div className="w-full">
@@ -29,7 +34,7 @@ const Popular_cover = () => {
                 key={idx}
                 className="w-full p-2 hover:bg-primary rounded-lg cursor-pointer mb-2 flex justify-start items-center gap-4"
                 title={news?.title}
-                onClick={() => reDirectToRead(news?._id,news?.category)}
+                onClick={() => reDirectToRead(news?._id, news?.category)}
               >
                 <Image
                   src={news?.thumbnail}

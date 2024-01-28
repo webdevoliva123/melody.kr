@@ -12,7 +12,7 @@ const ArticleNotFound = ({data}) => {
                 {
                     data?.data?.map((article,idx) => {
                         return (
-                            <div key={idx} className="w-full  rounded-md overflow-hidden" title={article?.title}>
+                            <div key={idx} className="w-full  rounded-md  overflow-hidden" title={article?.title}>
                                 {/* thumbnail */}
                                 <div className="w-full h-[20vh]">
                                     <Image  src={article?.thumbnail} width={500} height={500} className="relative w-full h-full object-cover "/>

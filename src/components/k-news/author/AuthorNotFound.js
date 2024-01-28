@@ -48,7 +48,7 @@ const AuthorNotFound = ({ data }) => {
                       <a href={author?.socialMedia?.twitter} target="_blank">
                         <FaXTwitter
                           size={10}
-                          className="text-primary cursor-pointer hover:text-accent"
+                          className="text-secondary cursor-pointer hover:text-accent"
                         />
                       </a>
                     )}
@@ -56,7 +56,7 @@ const AuthorNotFound = ({ data }) => {
                       <a href={author?.socialMedia?.linkedin} target="_blank">
                         <FaLinkedin
                           size={10}
-                          className="text-primary cursor-pointer hover:text-accent"
+                          className="text-secondary cursor-pointer hover:text-accent"
                         />
                       </a>
                     )}
@@ -64,7 +64,7 @@ const AuthorNotFound = ({ data }) => {
                       <a href={author?.socialMedia?.instagram} target="_blank">
                         <FaInstagram
                           size={10}
-                          className="text-primary cursor-pointer hover:text-accent"
+                          className="text-secondary cursor-pointer hover:text-accent"
                         />
                       </a>
                     )}
