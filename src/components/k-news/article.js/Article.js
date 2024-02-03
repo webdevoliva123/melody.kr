@@ -9,7 +9,6 @@ import {
   FaRedditAlien,
 } from "react-icons/fa6";
 import { FaInstagram } from "react-icons/fa";
-import { PiFacebookLogoFill } from "react-icons/pi";
 import { IoLogoPinterest } from "react-icons/io5";
 import { PiTelegramLogoLight } from "react-icons/pi";
 import { IoMail } from "react-icons/io5";
@@ -24,8 +23,8 @@ import { IoCloseSharp } from "react-icons/io5";
 import GlobalLoading from "@/components/global/loadings/globalLoading";
 import { reDirectToAuthor, reDirectToRead } from "@/utils/reDirectToRead";
 import { timeAgo } from "@/utils/dateformatter";
-import { TwitterShareButton,  InstapaperShareButton, FacebookShareButton, TelegramShareButton, PinterestShareButton, WhatsappShareButton, LineShareButton, LinkedinShareButton, RedditShareButton, EmailShareButton} from "react-share";
-import { InstapaperShare } from "react-share-kit";
+import { TwitterShareButton, TelegramShareButton, PinterestShareButton, WhatsappShareButton, LinkedinShareButton, RedditShareButton, EmailShareButton} from "react-share";
+
 
 const Article = ({ loading, data }) => {
   const [showMoreShareOpt, setShowMoreShareOpt] = useState(false);
