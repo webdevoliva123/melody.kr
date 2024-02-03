@@ -24,50 +24,65 @@ import { IoCloseSharp } from "react-icons/io5";
 import GlobalLoading from "@/components/global/loadings/globalLoading";
 import { reDirectToAuthor, reDirectToRead } from "@/utils/reDirectToRead";
 import { timeAgo } from "@/utils/dateformatter";
-
-const shareOptions = [
-  {
-    _id: "twitter",
-    component: <FaXTwitter className="text-primary" size={12} />,
-  },
-  {
-    _id: "instagram",
-    component: <FaInstagram className="text-primary" size={12} />,
-  },
-  {
-    _id: "facebook",
-    component: <PiFacebookLogoFill className="text-primary" size={12} />,
-  },
-  {
-    _id: "telegram",
-    component: <PiTelegramLogoLight className="text-primary" size={12} />,
-  },
-  {
-    _id: "pinterest",
-    component: <IoLogoPinterest className="text-primary" size={12} />,
-  },
-  {
-    _id: "whatsapp",
-    component: <FaWhatsapp className="text-primary" size={12} />,
-  },
-  {
-    _id: "linkedin",
-    component: <FaLinkedin className="text-primary" size={12} />,
-  },
-  {
-    _id: "reddit",
-    component: <FaRedditAlien className="text-primary" size={12} />,
-  },
-  {
-    _id: "reddit",
-    component: <IoMail className="text-primary" size={12} />,
-  },
-];
+import { TwitterShareButton,  InstapaperShareButton, FacebookShareButton, TelegramShareButton, PinterestShareButton, WhatsappShareButton, LineShareButton, LinkedinShareButton, RedditShareButton, EmailShareButton} from "react-share";
+import { InstapaperShare } from "react-share-kit";
 
 const Article = ({ loading, data }) => {
   const [showMoreShareOpt, setShowMoreShareOpt] = useState(false);
   const [magnifyImage, setMagnifyImage] = useState(false);
   const [magnifyImageSrc, setMagnifyImageSrc] = useState(null);
+  const [url, setUrl] = useState("");
+  useEffect(() => {
+    // Access window.location only on the client side
+    if (typeof window !== "undefined") {
+      setUrl(window.location.href);
+    }
+  }, []);
+
+  const shareOptions = [
+    {
+      _id: "twitter",
+      component: (
+        <TwitterShareButton url={url} title={data?.title}>
+          <FaXTwitter className="text-primary" size={12} />
+        </TwitterShareButton>
+      ),
+    },
+    {
+      _id: "telegram",
+      component: <TelegramShareButton url={url} title={data?.title}>
+        <PiTelegramLogoLight className="text-primary" size={12} />
+      </TelegramShareButton>,
+    },
+    {
+      _id: "pinterest",
+      component: <PinterestShareButton media={data?.thumbnail} url={url} description={data?.title}>
+        <IoLogoPinterest className="text-primary" size={12} />
+      </PinterestShareButton>,
+    },
+    {
+      _id: "whatsapp",
+      component: <WhatsappShareButton url={url} title={data?.title}>
+        <FaWhatsapp className="text-primary" size={12} />
+      </WhatsappShareButton>,
+    },
+    {
+      _id: "linkedin",
+      component: <LinkedinShareButton url={url} title={data?.title} source="Melody.Kr">
+        <FaLinkedin className="text-primary" size={12} />
+      </LinkedinShareButton>,
+    },
+    {
+      _id: "reddit",
+      component: <RedditShareButton url={url} title={data?.title}><FaRedditAlien className="text-primary" size={12} /></RedditShareButton>,
+    },
+    {
+      _id: "mail",
+      component: <EmailShareButton url={url} subject={data?.title} body={`Read This Blog : ${url}`}>
+        <IoMail className="text-primary" size={12} />
+      </EmailShareButton>,
+    },
+  ];
 
   const extractImages = (event) => {
     if (event?.target?.className === "article_post") {
@@ -107,12 +122,12 @@ const Article = ({ loading, data }) => {
             <div className="absolute top-0 left-0 w-full h-full  z-[2] flex justify-start items-end">
               {/* main-content */}
               <div className="p-5 w-full">
-                 {/* gagdets for desktop */}
-                 <div className="md:hidden flex justify-start items-center  text-white text-xs  mb-2 ">
-                    <article>{data?.views} Views</article>
-                    <BsDot size={15} className="text-white" />
-                    <article>{data?.comments?.length} Comments</article>
-                  </div>
+                {/* gagdets for desktop */}
+                <div className="md:hidden flex justify-start items-center  text-white text-xs  mb-2 ">
+                  <article>{data?.views} Views</article>
+                  <BsDot size={15} className="text-white" />
+                  <article>{data?.comments?.length} Comments</article>
+                </div>
                 <article className="md:text-[25px] text-[18px] text-white font-bold mb-5">
                   {data?.title}
                 </article>
@@ -130,8 +145,10 @@ const Article = ({ loading, data }) => {
                       />
                     </div>
                     <div className="relative">
-                     
-                      <article className="text-white font-semibold cursor-pointer" onClick={() => reDirectToAuthor(data?.author?._id)}>
+                      <article
+                        className="text-white font-semibold cursor-pointer"
+                        onClick={() => reDirectToAuthor(data?.author?._id)}
+                      >
                         {data?.author?.name}
                       </article>
                       <article className="text-secondary text-xs">
@@ -244,11 +261,13 @@ const Article = ({ loading, data }) => {
                 <article className="text-secondary text-xs font-light ">
                   Posted By
                 </article>
-                
-                  <article className="text-primary text-[16px] font-semibold cursor-pointer hover:text-accent " onClick={() => reDirectToAuthor(data?.author?._id)}>
-                    {data?.author?.name}
-                  </article>
-                
+
+                <article
+                  className="text-primary text-[16px] font-semibold cursor-pointer hover:text-accent "
+                  onClick={() => reDirectToAuthor(data?.author?._id)}
+                >
+                  {data?.author?.name}
+                </article>
               </div>
               <div className="mx-4 h-[15px] border-r border-primary w-[1px]"></div>
               <div className="flex justify-start items-center gap-2">
@@ -468,5 +487,3 @@ const Article = ({ loading, data }) => {
 };
 
 export default Article;
-
-

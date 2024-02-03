@@ -5,7 +5,7 @@ const nextConfig = {
     domains : ['res.cloudinary.com']
   },
   env : {
-    NEXT_PUBLIC_SEVER_BASE_URI : "https://melodykr-server.vercel.app/"
+    NEXT_PUBLIC_SEVER_BASE_URI : "http://localhost:5500"
   }
 }
 
