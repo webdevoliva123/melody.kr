@@ -12,6 +12,7 @@ import { defaultLinks, k_NewsLinks } from "@/constant/links";
 import Link from "next/link";
 import Sidebar from "../sidebar/Sidebar";
 import Searchbar from "../searchbar/Searchbar";
+import Button from "@/elements/Button";
 
 const Header = () => {
   const router = useRouter();
@@ -174,7 +175,7 @@ const Header = () => {
           />
           <FaXTwitter
             size={20}
-            className="text-primary hover:text-accent cursor-pointer ease-in duration-150"
+            className="md:block hidden text-primary hover:text-accent cursor-pointer ease-in duration-150"
           />
           <div onClick={openSearchbarHandler}>
           <RiSearch2Line
@@ -182,10 +183,13 @@ const Header = () => {
             className="text-primary hover:text-accent cursor-pointer ease-in duration-150"
           />
           </div>
-          <FaUser
+          {true ? <div className="text-white hover:bg-accent bg-[#8c51fd]  py-2 px-3 text-xs rounded-full cursor-pointer flex gap-1 justify-center items-center shadow-md ease-in duration-150"> <FaUser
+            size={12}
+            className="text-white  cursor-pointer "
+          />  SIGN IN</div> :  <FaUser
             size={20}
             className="text-primary hover:text-accent cursor-pointer ease-in duration-150"
-          />
+          />}
         </div>
         {/* time */}
         <div className=" h-[40px] pl-[20px] ml:[10px] border-l lg:flex justify-center items-center gap-2  hidden">

@@ -7,20 +7,34 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { IoClose, IoChevronDownOutline } from "react-icons/io5";
 import { useRouter } from "next/router";
+import melodyapi from "@/apis/_axios";
+import { GetLatestArticlesAPI } from "@/apis/_list";
+import Popular_cover from "@/components/k-news/categories/Popular_cover";
+import { timeAgo } from "@/utils/dateformatter";
+import { reDirectToRead } from "@/utils/reDirectToRead";
 
 const SidebarLink = ({ link }) => {
   const [subcatOpen, setSubCatOpen] = useState(false);
+  
+
   return (
-    <div className="relative w-full mb-4" onClick={() => setSubCatOpen(!subcatOpen)}>
+    <div
+      className="relative w-full mb-4"
+      onClick={() => setSubCatOpen(!subcatOpen)}
+    >
       <div
         className={`w-full flex justify-between items-center hover:text-accen cursor-pointer ${
           subcatOpen && "mb-2"
         }`}
       >
         <Link href={link?.url}>
-          <article className="text-sm text-primary cursor-pointer">{link?.name}</article>
+          <article className="text-sm text-primary cursor-pointer">
+            {link?.name}
+          </article>
         </Link>
-        {link?.subcategory && <IoChevronDownOutline size={15} className="text-primary" />}
+        {link?.subcategory && (
+          <IoChevronDownOutline size={15} className="text-primary" />
+        )}
       </div>
       {link?.subcategory && (
         <div
@@ -31,8 +45,12 @@ const SidebarLink = ({ link }) => {
           {link?.subcategory?.map((sublink, idx) => {
             return (
               <Link key={idx} href={sublink?.url}>
-                <article className={`text-xs text-primary cursor-pointer ${(link?.subcategory?.length -1 ) !== idx && 'mb-4'}`}>
-                   / {sublink?.name}
+                <article
+                  className={`text-xs text-primary cursor-pointer ${
+                    link?.subcategory?.length - 1 !== idx && "mb-4"
+                  }`}
+                >
+                  / {sublink?.name}
                 </article>
               </Link>
             );
@@ -45,7 +63,21 @@ const SidebarLink = ({ link }) => {
 
 const Sidebar = ({ open, setSidebarOpen }) => {
   const [melodyTheme, setMelodyTheme] = useState(null);
-  const router = useRouter()
+  const [articles, setArticles] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  const getLatestArticle = async () => {
+    setLoading(true);
+    const response = await melodyapi.get(GetLatestArticlesAPI);
+    setArticles(response?.data?.data);
+    setLoading(false);
+  };
+
+  useEffect(() => {
+    getLatestArticle();
+  }, []);
+
+  const router = useRouter();
   useEffect(() => {
     if (open) {
       const body = window.document?.querySelector("body");
@@ -86,8 +118,8 @@ const Sidebar = ({ open, setSidebarOpen }) => {
     };
   }, []);
   useEffect(() => {
-    setSidebarOpen(false)
-  },[router])
+    setSidebarOpen(false);
+  }, [router]);
   return (
     <div
       className={`fixed top-0 ${
@@ -169,20 +201,47 @@ const Sidebar = ({ open, setSidebarOpen }) => {
         </div>
         {/*  */}
         <div className="w-full">
-        <Heading label={'Pouplar Article'} htype={2} custcss="mb-4"/>
-        <div className='w-full'>
-            {
-                trendingNews?.map((news,idx) => {
-                    return <div key={idx} className='w-full p-2 hover:bg-primary rounded-lg cursor-pointer mb-2 flex justify-start items-center gap-4' title={news?.title}>
-                        <Image src={news?.thumbnail} alt={news?.title} width={500} height={500} className='relative w-[60px] h-[60px] rounded-lg object-cover overflow-hidden' />
-                        <div className='flex-[1] relative'>
-                            <article className='text-[12px] font-semibold text-primary'>{news?.title?.length > 50 ? `${news?.title?.slice(0,50)}...` : news?.title }</article>
-                            <article className='text-[10px] text-secondary'>{news?.created_At}</article>
+          {loading ? (
+            <div className="w-full rounded-lg bg-secondary  h-[75vh] animate-pulse"></div>
+          ) : (
+            <div className="w-full rounded-lg bg-secondary ">
+              <Heading label={"Latest Article"} htype={2} custcss="mb-4" />
+              <div className="w-full">
+                {articles?.map((news, idx) => {
+                  if (idx < 6) {
+                    return (
+                      <div
+                        key={idx}
+                        className="w-full hover:bg-primary rounded-lg cursor-pointer mb-4 flex justify-start items-center gap-4"
+                        title={news?.title}
+                        onClick={() =>
+                          reDirectToRead(news?._id, news?.category)
+                        }
+                      >
+                        <Image
+                          src={news?.thumbnail}
+                          alt={news?.title}
+                          width={500}
+                          height={500}
+                          className="relative w-[60px] h-[60px] rounded-lg object-cover overflow-hidden"
+                        />
+                        <div className="flex-[1] relative">
+                          <article className="text-[12px] font-semibold text-primary">
+                            {news?.title?.length > 50
+                              ? `${news?.title?.slice(0, 50)}...`
+                              : news?.title}
+                          </article>
+                          <article className="text-[10px] text-secondary">
+                            {timeAgo(news?.createdAt)}
+                          </article>
                         </div>
-                    </div>
-                })
-            }
-        </div>
+                      </div>
+                    );
+                  }
+                })}
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </div>
