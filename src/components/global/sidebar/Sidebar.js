@@ -1,5 +1,4 @@
 "use client";
-import trendingNews from "@/json/highlightTrendingNews.json";
 import { sibarLinks } from "@/constant/links";
 import Heading from "@/elements/Heading";
 import Image from "next/image";
@@ -9,7 +8,6 @@ import { IoClose, IoChevronDownOutline } from "react-icons/io5";
 import { useRouter } from "next/router";
 import melodyapi from "@/apis/_axios";
 import { GetLatestArticlesAPI } from "@/apis/_list";
-import Popular_cover from "@/components/k-news/categories/Popular_cover";
 import { timeAgo } from "@/utils/dateformatter";
 import { reDirectToRead } from "@/utils/reDirectToRead";
 

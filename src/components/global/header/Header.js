@@ -12,7 +12,6 @@ import { defaultLinks, k_NewsLinks } from "@/constant/links";
 import Link from "next/link";
 import Sidebar from "../sidebar/Sidebar";
 import Searchbar from "../searchbar/Searchbar";
-import Button from "@/elements/Button";
 
 const Header = () => {
   const router = useRouter();
