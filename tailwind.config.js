@@ -27,6 +27,7 @@ module.exports = {
       },
       colors:{
         'accent':'#3d55ef',
+        'purple': '#8c51fd',
         'white':'#fff',
         'black' :'#111',
         'dark' : "rgba(255,255,255,0.6)",

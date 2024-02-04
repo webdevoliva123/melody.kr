@@ -183,7 +183,7 @@ const Header = () => {
             className="text-primary hover:text-accent cursor-pointer ease-in duration-150"
           />
           </div>
-          {true ? <div className="text-white hover:bg-accent bg-[#8c51fd]  py-2 px-3 text-xs rounded-full cursor-pointer flex gap-1 justify-center items-center shadow-md ease-in duration-150"> <FaUser
+          {true ? <div className="text-white  bg-purple  py-2 px-3 text-xs rounded-full cursor-pointer flex gap-1 justify-center items-center shadow-md ease-in duration-150"> <FaUser
             size={12}
             className="text-white  cursor-pointer "
           />  SIGN IN</div> :  <FaUser
