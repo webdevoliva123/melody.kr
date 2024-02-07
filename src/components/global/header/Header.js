@@ -12,6 +12,7 @@ import { defaultLinks, k_NewsLinks } from "@/constant/links";
 import Link from "next/link";
 import Sidebar from "../sidebar/Sidebar";
 import Searchbar from "../searchbar/Searchbar";
+import AuthenticateAccount from "../authenticate-account/AuthenticateAccount";
 
 const Header = () => {
   const router = useRouter();
@@ -21,6 +22,7 @@ const Header = () => {
   const [currentStateLink, setCurrentStateLink] = useState([]);
   const [openSidebar,setOpenSidebar] = useState(false)
   const [openSearchbar,setOpenSearchbar] = useState(false)
+  const [authenticateUser,setAuthenticateUser] = useState(false)
 
   useEffect(() => {
     const observer = new MutationObserver((mutationsList) => {
@@ -182,7 +184,7 @@ const Header = () => {
             className="text-primary hover:text-accent cursor-pointer ease-in duration-150"
           />
           </div>
-          {true ? <div className="text-white  bg-purple  py-2 px-3 text-xs rounded-full cursor-pointer flex gap-1 justify-center items-center shadow-md ease-in duration-150"> <FaUser
+          {true ? <div className="text-white  bg-purple  py-2 px-3 text-xs rounded-full cursor-pointer flex gap-1 justify-center items-center shadow-md ease-in duration-150" onClick={() => setAuthenticateUser(true)}> <FaUser
             size={12}
             className="text-white  cursor-pointer "
           />  SIGN IN</div> :  <FaUser
@@ -217,6 +219,8 @@ const Header = () => {
     <Sidebar open={openSidebar} setSidebarOpen={setOpenSidebar} />
     {/* main searchbar */}
     <Searchbar open={openSearchbar} setSearchbarOpen={setOpenSearchbar} />
+    {/* authenticate user */}
+    <AuthenticateAccount open={authenticateUser} setAuthenticateUser={setAuthenticateUser} />
     </>
   );
 };
