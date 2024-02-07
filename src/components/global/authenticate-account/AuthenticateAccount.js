@@ -172,7 +172,7 @@ const AuthenticateAccount = ({ open, setAuthenticateUser }) => {
         {/* rigth section  */}
         <div className="md:flex-[0.7] md:block hidden w-full h-full ">
           <video
-            src="https://res.cloudinary.com/dkz1pnb2b/video/upload/v1696700030/V_Rainy_Days_Official_MV_zkdrto.mp4"
+            src="https://res.cloudinary.com/dkz1pnb2b/video/upload/v1707321457/hello_utvrah.mp4"
             autoPlay
             loop
             muted
