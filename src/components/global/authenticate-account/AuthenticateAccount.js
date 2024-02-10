@@ -56,7 +56,7 @@ const AuthenticateAccount = ({ open, setAuthenticateUser }) => {
         {/* rigth section  */}
         <div className="md:flex-[0.7] md:block hidden w-full h-full ">
           <video
-            src="https://res.cloudinary.com/dkz1pnb2b/video/upload/v1707595361/x2mate.com-Free_Kpop_Intro_Kill_Shot_35-_1080p60_o97bdp.mp4"
+            src="https://res.cloudinary.com/dkz1pnb2b/video/upload/v1707599358/harsha_agarwal_raw-video-cfr_riverside_0002_qhv9x4.mp4"
             autoPlay
             loop
             muted
