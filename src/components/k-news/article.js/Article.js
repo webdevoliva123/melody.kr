@@ -178,7 +178,7 @@ const Article = ({ loading, data }) => {
               {shareOptions?.map((option, idx) => {
                 if (!showMoreShareOpt ? idx < 6 : idx < 10) {
                   return (
-                    <div className="cursor-pointer">{option?.component}</div>
+                    <div className="cursor-pointer -mt-[2px]">{option?.component}</div>
                   );
                 }
               })}
